@@ -5,29 +5,31 @@ const Schema = mongoose.Schema
 const ingredientSchema = new Schema({
   ingredient: {
     type: String,
-    required
+    required: true
   },
   quantity: {
     type: String,
-    required
+    required: true
   }
+}, {
+  timestamps: true,
 })
 
 
 const recipeSchema = new Schema({
   title: {
-    String,
-    required
+    type: String,
+    required: true
   },
   author: { 
     type: Schema.Types.ObjectId, 
     ref: 'Profile',
-    required
+    required: true
   },
   ingredients: [ingredientSchema],
   instructions: { 
     type: String,
-    required
+    required: true
   },
   notes: String
 }, {
@@ -37,5 +39,5 @@ const recipeSchema = new Schema({
 const Recipe = mongoose.model('Recipe', recipeSchema)
 
 export {
-  recipeSchema
+  Recipe
 }
