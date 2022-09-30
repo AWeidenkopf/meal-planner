@@ -2,23 +2,29 @@
 <link rel="stylesheet" href="/stylesheets/new.css" />
 <%- include('../partials/nav') %>
 
-<h1>Add a New Recipe</h1>
-
+<div class="new-recipe-card">
+  <div class="card-head">
+    <h1>New Recipe Card</h1>
+  </div>
+  <div class="card-body">
 <form action="/recipes" method="post">
-<label> Create the recipe's title:
-  <input type="text" name="title">
+<label> Recipe's title:
+  <input type="text" name="title" placeholder="Vegetarian Chili">
+</label>
+<label> Instructions:
+  <textarea type="text-area" name="instructions" placeholder="Sautée onions ... "></textarea>
+</label>
+<label> Notes:
+  <textarea type="text-area" name="notes" placeholder="Intead of 1 tsp of salt, use only half tsp."></textarea>
 </label>
 <label> Ingredients:
   <input type="text" name="ingredients">
 </label>
-<button>Add ingredient</button>
-<label> Instructions:
-  <textarea type="text-area" name="instructions">sautee onions </textarea>
-</label>
-<label> Notes:
-  <textarea type="text-area" name="notes">sautee onions </textarea>
-</label>
+<button>Add ingredients</button>
 <button type="submit">Add Recipe</button>
 </form>
+</div>
+</div>
+
 
 <%- include('../partials/footer') %>

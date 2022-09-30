@@ -1,11 +1,50 @@
-form {
-  display: block;
+body {
+  display: flex;
   justify-content: center;
-  align-items: center;
 }
+
+nav {
+  position: absolute;
+  width: 100%
+}
+
+
+.new-recipe-card {
+  margin: 15vh 10px;
+  width: 800px;
+  height: 500px;
+  border: 2px solid;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.card-head{
+  background-color: #91a181;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+
+.card-body {
+  display: flex;
+  text-align: center;
+
+}
+
+form {
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+}
+
 input {
   display: block;
-  width: 300px;
+  width: 796px;
+  background-color: white;
+  border: 1px solid #91a181;
 }
 
 label {
@@ -14,4 +53,17 @@ label {
 
 textarea {
   display: block;
+  width: 796px;
+  background-color: white;
+  border: 1px solid #91a181;
+}
+
+button {
+  margin: 10px auto;
+  display: inline-block;
+  width: 200px;
+  color: #50603f;
+  background-color: rgb(204, 213, 174);
+  border: 1px solid rgb(204, 213, 174);
+  border-radius: 10px;
 }
