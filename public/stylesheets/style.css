@@ -36,25 +36,13 @@ nav> a:hover {
 }
 
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  margin-bottom: 40px;
 }
+
 
 #landing-page-img {
-  background-image: url('../assets/landing_page_img.jpg');
+  background-image: url('../assets/images/landing_page_img.jpg');
   width: 100%;
   min-height: 100vh;
   background-size: cover;
@@ -68,4 +56,24 @@ main {
 #landing-page-img > h1 {
   color:white;
   font-size: 30px;
+}
+
+#how-it-works-box {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h2 {
+  margin-top: 30px;
+}
+
+#footer {
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  align-items: center;
+  text-align: center;
+  color: #50603f;
 }
