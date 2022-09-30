@@ -5,9 +5,9 @@ const router = Router()
 
 router.get('/', recipesCtrl.index)
 
-router.get('/',)
-
 router.get('/new', recipesCtrl.new)
+
+router.get('/:id', recipesCtrl.show)
 
 router.post('/', recipesCtrl.create)
 
