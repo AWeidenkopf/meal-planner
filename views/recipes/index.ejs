@@ -1,22 +1,27 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/index.css" />
 <%- include('../partials/nav') %>
 
-<h1> ALL RECIPES </h1>
 <% if (user) { %>
-<form action="/recipes/new" method="post"><button>Add a recipe</button></a>
+  <div class="new-recipe-btn">
+<form action="/recipes/new" method="post"><button>Add a new recipe</button></form>
+</div>
 
-  <section>
+  <section class="recipe-card">
+    <div class="row">
     <% recipes.forEach(recipe => { %>
-      <div id="recipe-card">
-        <h2><%= recipe.title%></h2>
-        <h3>Ingredients:</h3>
-        <ul>
-          <li><%= recipe.ingredients %> </li>
-        </ul>
-        <h3><%= recipe.instructions %> </h3>
-        <h3><%= recipe.notes %> </h3>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= recipe.title%></h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="/recipes/show" class="card-link">Open Recipe</a>
+            </div>
+          </div>
+        </div>
+        <% }) %> 
       </div>
-    <% }) %> 
   </section>
 <% } %>
+
 <%- include('../partials/footer') %>

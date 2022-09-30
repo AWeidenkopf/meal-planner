@@ -1,0 +1,23 @@
+
+button {
+  width: 200px;
+  margin-top: 60px;
+  color: #50603f;
+  background-color: rgb(204, 213, 174);
+  border: 1px solid rgb(204, 213, 174);
+  border-radius: 10px;
+}
+
+.recipe-card {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.card:hover {
+  background-color: #FAEDCD;
+}
+.row {
+  grid-gap: 10px 0px;
+}

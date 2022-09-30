@@ -1,15 +1,15 @@
   <% if (!user) { %>
-    <script defer src="https://accounts.google.com/gsi/client"></script>
+    <script  defer src="https://accounts.google.com/gsi/client"></script>
   <% } %>
 </head>
 <body>
   <nav>
     <% if (user) { %>
-      <a href="/recipes"><button> All Recipes</button></a>
+      <a href="/recipes">All Recipes</a>
+      <a href="#">Calendar</a>
+      <a href="#">Grocery List</a>
 
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
+      <a href="/auth/logout" class="right">Logout</a>
     <% } else { %>
       <div 
         id="g_id_onload"

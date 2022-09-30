@@ -2,8 +2,33 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <div id="login-container">
-    <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <div id="landing-page-img">
+    <!-- <h1>hello, <%= user ? user.profile.name : "friend" %></h1> -->
+  </div>
+  <div id="how-it-works-box">
+    <h2> how it works</h2>
+    <div>
+      <img src="../public/assets/recipe-book.png">
+      <p>Create your recipe book, by adding your favorite recipes</p>
+    </div>
+    <div>
+      <img src="../public/assets/phone.png">
+      <p>Search from your recipe book for a recipe and add it to your calendar</p>
+    </div>
+    <div>
+      <img src="../public/assets/grocery-list.png">
+      <p>Add the ingridients to your grocery list</p>
+    </div>
+    <div>
+      <img src="../public/assets/grocery-shop.png">
+      <p>Grocery shop! Just open the app and check what you need</p>
+    </div>
+    <div>
+      <img src="../public/assets/cook.png">
+      <p>Cook your delicious meal</p>
+    </div>
+  </div>
+  <div >
   <% if (user?.profile.avatar) { %>
       <img
         src="<%= user.profile.avatar %>"
