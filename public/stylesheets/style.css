@@ -1,14 +1,14 @@
 
 body {
-  background-color: #1a1a1a;
-  color: #f6f6f6;
+  background-color: rgb(250, 237, 205);
+  color: black;
   margin: 0;
   position: relative;
   min-height: 100vh;
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: rgb(204, 213, 174);
   color: #1a1a1a;
   display: flex;
   justify-content: center;

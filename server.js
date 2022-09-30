@@ -8,6 +8,7 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
+import require from 'express'
 
 // import custom middleware
 import { passDataToView } from './middleware/middleware.js'
@@ -43,6 +44,7 @@ app.use(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
   )
 )
+
 
 // session middleware
 app.use(
