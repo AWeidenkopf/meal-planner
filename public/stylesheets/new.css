@@ -1,0 +1,17 @@
+form {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  display: block;
+  width: 300px;
+}
+
+label {
+  display: block;
+}
+
+textarea {
+  display: block;
+}

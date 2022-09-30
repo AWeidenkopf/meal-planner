@@ -1,1 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
 <h1> ALL RECIPES </h1>
+<% if (user) { %>
+<form action="/recipes/new" method="post"><button>Add a recipe</button></a>
+
+  <section>
+    <% recipes.forEach(recipe => { %>
+      <div id="recipe-card">
+        <h2><%= recipe.title%></h2>
+        <h3>Ingredients:</h3>
+        <ul>
+          <li><%= recipe.ingredients %> </li>
+        </ul>
+        <h3><%= recipe.instructions %> </h3>
+        <h3><%= recipe.notes %> </h3>
+      </div>
+    <% }) %> 
+  </section>
+<% } %>
+<%- include('../partials/footer') %>

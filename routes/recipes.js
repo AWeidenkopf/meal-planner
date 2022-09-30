@@ -5,6 +5,10 @@ const router = Router()
 
 router.get('/', recipesCtrl.index)
 
+router.post('/new', recipesCtrl.new)
+
+router.post('/', recipesCtrl.create)
+
 export {
   router
 }
