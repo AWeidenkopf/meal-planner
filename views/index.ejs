@@ -4,7 +4,6 @@
 
 <main>
   <div id="landing-page-img">
-    <!-- <h1>hello, <%= user ? user.profile.name : "friend" %></h1> -->
   </div>
   <h2> How it works</h2>
   <div id="how-it-works-box">
@@ -29,17 +28,17 @@
       <p>Cook your delicious meal!</p>
     </div>
   </div>
-  <h3>Start now! It's free!</h3>
-
-
-  <div >
   <% if (user?.profile.avatar) { %>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
+    <h5>You are logged in as <%= user.profile.name %></h5>
+    <img class="avatar"
+      src="<%= user.profile.avatar %>"
+      alt="<%= user.profile.name %> avatar"
+    />
+  </div>
+<% } else { %>
+  <h3>Start now! It's free!</h3>
   <% } %>
+  <div >
 </main>
 
 <%- include('./partials/footer') %>

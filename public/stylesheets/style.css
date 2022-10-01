@@ -79,3 +79,7 @@ h2 {
   color: #50603f;
   font-size: 10px;
 }
+
+.avatar {
+  border-radius: 50%;
+}
