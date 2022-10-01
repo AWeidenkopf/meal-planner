@@ -63,6 +63,7 @@ main {
   justify-content: space-around;
   text-align: center;
   margin-bottom: 50px;
+  color: rgb(144, 150, 122);
 }
 
 h2 {
@@ -76,4 +77,5 @@ h2 {
   align-items: center;
   text-align: center;
   color: #50603f;
+  font-size: 10px;
 }
