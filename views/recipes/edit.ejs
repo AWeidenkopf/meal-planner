@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/new.css" />
+<%- include('../partials/nav') %>
+
+<div class="new-recipe-card">
+  <div class="card-head">
+    <h1><%= recipe.title %></h1>
+  </div>
+  <div class="card-body">
+<form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
+<label> Recipe's title:
+  <input type="text" name="title" value="<%= recipe.title %>" placeholder="<%= recipe.title %>">
+</label>
+<label> Instructions:
+  <textarea type="text-area" name="instructions" value="<%= recipe.instructions %>" placeholder="<%= recipe.instructions %>"></textarea>
+</label>
+<label> Notes:
+  <textarea type="text-area" name="notes" value="<%= recipe.notes %>" placeholder="<%= recipe.notes %>"></textarea>
+</label>
+<label> Ingredients:
+  <input type="text" name="ingredients" value="<%= recipe.ingredients%>">
+</label>
+<button type="submit">Update Recipe</button>
+</form>
+<a href="/ingredients/new"><button>Add ingredients</button></a>
+</div>
+</div>
+
+<%- include('../partials/footer') %>

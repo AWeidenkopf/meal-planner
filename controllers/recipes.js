@@ -50,9 +50,48 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Recipe.findById(req.params.id) 
+  .then(recipe => {
+    res.render('recipes/edit', {
+      recipe,
+      title: 'Edit Recipe'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function update(req, res) {
+  Recipe.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(recipe => {
+    res.redirect(`/recipes/${recipe._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function deleteRecipe(req, res) {
+  Recipe.findByIdAndDelete(req.params.id)
+  .then(recipe => {
+    res.redirect(`/recipes`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newRecipe as new,
   create,
-  show
+  show,
+  edit,
+  update,
+  deleteRecipe as delete
 }

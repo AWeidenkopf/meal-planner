@@ -1,12 +1,21 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/show.css" />
 <%- include('../partials/nav') %>
+
 <h1>recipe</h1>
 <section>
   <div><%= recipe.title %></div>
+  <div>INGREDIENTS</div>
+  <button>Add Ingredients</button>
   <div>INSTRUCTIONS</div>
+  <div id="title-divider"></div>
   <div><%= recipe.instructions %></div>
   <div>NOTES</div>
   <div><%= recipe.notes %></div>
+    <button class="edit-btn"><a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a></button>
+  <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+    <button>X</button>
+  </form>
 </section>
 
 <%- include('../partials/footer') %>
