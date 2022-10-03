@@ -19,7 +19,7 @@ const recipeSchema = new Schema({
     type: Schema.Types.ObjectId, 
     ref: 'Profile',
   },
-  ingredients: String,
+  ingredients: [{type: Schema.Types.ObjectId, ref: "Ingredient"}],
   instructions: { 
     type: String,
   },

@@ -1,5 +1,6 @@
 import { Recipe } from '../models/recipe.js'
 import { Profile } from '../models/profile.js'
+import { Ingredient } from '../models/ingredient.js'
 
 function index(req, res) {
   Recipe.find({})
@@ -23,7 +24,9 @@ function newRecipe(req, res) {
 
 function create(req, res) {
   req.body.author = req.user.profile._id
-  console.log(req.body)
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+	}
   Recipe.create(req.body)
   .then(recipe => {
     recipe.save()
@@ -38,16 +41,25 @@ function create(req, res) {
 
 function show(req, res) {
   Recipe.findById(req.params.id)
+  .populate('ingredients')
   .then(recipe => {
+    Ingredient.find({_id: {$nin: recipe.ingredients}})
+    .then(ingredients => { 
     res.render('recipes/show', {
       title: 'Recipe',
-      recipe
+      recipe,
+      ingredients
     })
   })
   .catch(err => {
     console.log(err)
     res.redirect('/')
   })
+})
+.catch(err => {
+  console.log(err)
+  res.redirect('/')
+})
 }
 
 function edit(req, res) {
@@ -86,6 +98,17 @@ function deleteRecipe(req, res) {
   })
 }
 
+function addToList(req, res) {
+  Recipe.findById(req.params.id)
+  .then(recipe => {
+    recipe.ingredients.push(req.body.ingredientId)
+    recipe.save()
+    .then(() => {
+      res.redirect(`/recipes/${recipe._id}`)
+    })
+  })
+}
+
 export {
   index,
   newRecipe as new,
@@ -93,5 +116,6 @@ export {
   show,
   edit,
   update,
-  deleteRecipe as delete
+  deleteRecipe as delete,
+  addToList
 }
