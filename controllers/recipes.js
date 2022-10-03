@@ -64,16 +64,25 @@ function show(req, res) {
 
 function edit(req, res) {
   Recipe.findById(req.params.id) 
+  .populate('ingredients')
   .then(recipe => {
+    Ingredient.find({_id: {$nin: recipe.ingredients}})
+    .then(ingredients => { 
     res.render('recipes/edit', {
       recipe,
-      title: 'Edit Recipe'
+      title: 'Edit Recipe',
+      ingredients
     })
   })
   .catch(err => {
     console.log(err)
     res.redirect('/')
   })
+})
+.catch(err => {
+  console.log(err)
+  res.redirect('/')
+})
 }
 
 function update(req, res) {

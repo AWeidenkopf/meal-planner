@@ -17,9 +17,12 @@
 <label> Notes:
   <textarea type="text-area" name="notes" value="<%= recipe.notes %>" placeholder="<%= recipe.notes %>"></textarea>
 </label>
-<label> Ingredients:
-  <input type="text" name="ingredients" value="<%= recipe.ingredients%>">
-</label>
+<div> Ingredients </div>
+<ul>
+  <% recipe.ingredients.forEach(ingredient => { %>
+    <li><%= ingredient.name %></li>
+  <% }) %>
+</ul>
 <button type="submit">Update Recipe</button>
 </form>
 <a href="/ingredients/new"><button>Add ingredients</button></a>
