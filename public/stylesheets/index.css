@@ -10,7 +10,8 @@ button {
 
 .new-recipe-btn {
   display: flex;
-  justify-content: center;
+  justify-content:left; 
+  margin-left: 40px;
 }
 
 body> h1 {

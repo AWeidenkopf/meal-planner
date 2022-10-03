@@ -41,7 +41,7 @@ function create(req, res) {
 
 function show(req, res) {
   Recipe.findById(req.params.id)
-  .populate('ingredients')
+  .populate('ingredients author')
   .then(recipe => {
     Ingredient.find({_id: {$nin: recipe.ingredients}})
     .then(ingredients => { 
@@ -78,7 +78,7 @@ function edit(req, res) {
     console.log(err)
     res.redirect('/')
   })
-})
+  })
 .catch(err => {
   console.log(err)
   res.redirect('/')

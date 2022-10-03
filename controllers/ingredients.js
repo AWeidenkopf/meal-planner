@@ -6,7 +6,7 @@ function newIngredient(req, res) {
   .then(ingredients => {
   res.render('ingredients/new', {
     ingredients,
-    title: 'Add a ingredient'
+    title: 'Ingredient List'
   })
 })
 .catch(err => {

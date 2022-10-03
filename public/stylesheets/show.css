@@ -1,21 +1,99 @@
-body {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main{
+  line-height: 1.5;
+  background-color: #50603f;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-section {
-  border: 3px solid;
-  margin: 10vh 0;
-  width: 50vw;
-  text-align: center;
+.container {
+  width: 55vw;
+  max-width: 100%;
+  background-color: #faf9f4;
+  padding: 30px;
+  margin: 20vh auto;
+  box-shadow: 0 0 5px rgba(75, 75, 75, 0.6);
 }
 
-#title-divider {
-  border: 2px solid;
-  width: 100%;
-  height: 0.2rem;
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
 }
 
-#footer {
-  position: absolute;
+.content {
+  width: 600px;
+  float: left;
+}
+
+.content>span {
+  float: left;
+}
+
+/* .img {
+  width: 250px;
+  float: right;
+  margin-top: 100px;
+} */
+
+.name {
+  font-size: 15px;
+  color: rgb(204, 213, 174);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.recipe-title {
+  display: inline-block;
+  font-size: 40px;
+  margin: 10px auto;
+}
+
+.ingredient-title {
+  font-size: 20px;
+  margin: 15px auto;
+  color: #50603f;
+}
+
+ul>li {
+  text-align: left;
+}
+
+.instructions-title {
+  font-size: 20px;
+  margin: 15px auto;
+  color: #50603f;
+}
+
+button {
+  margin: 10px auto;
+  margin-left: -30px;
+  display: inline-block;
+  width: 200px;
+  color: #50603f;
+  background-color: rgb(204, 213, 174);
+  border: 1px solid rgb(204, 213, 174);
+  border-radius: 10px;
+}
+
+button>a {
+  text-decoration: none;
+  color: #50603f;
+}
+
+button:hover {
+  color: #50603f;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #50603f;
 }

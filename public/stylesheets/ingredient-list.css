@@ -1,0 +1,32 @@
+body {
+  background-color: #faf9f4;
+}
+
+input {
+  background-color: #faf9f4;
+  border: 1px solid ;
+  border-radius: 10px;
+  width: 600px;
+}
+
+#ingredients-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 10px auto;
+  display: inline-block;
+  width: 180px;
+  color: #50603f;
+  background-color: rgb(204, 213, 174);
+  border: 1px solid rgb(204, 213, 174);
+  border-radius: 10px;
+}
+
+#footer {
+  bottom: 0;
+  position: absolute;
+}
