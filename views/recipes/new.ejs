@@ -2,29 +2,32 @@
 <link rel="stylesheet" href="/stylesheets/new.css" />
 <%- include('../partials/nav') %>
 
+<main>
 <div class="new-recipe-card">
   <div class="card-head">
     <h1>New Recipe Card</h1>
   </div>
   <div class="card-body">
 <form action="/recipes" method="post">
-<label> Recipe's title:
-  <input type="text" name="title" placeholder="Vegetarian Chili">
+<label class="title-label"> TITLE:
+  <input type="text" name="title"  class="form-control" placeholder="Vegetarian Chili">
 </label>
-<label> Instructions:
-  <textarea type="text-area" name="instructions" placeholder="Sautée onions ... "></textarea>
+<label class="title-label"> INSTRUCTIONS:
+  <textarea type="text-area" name="instructions"  class="form-control" cols="5" rows="20" placeholder="Sautée onions ... "></textarea>
 </label>
-<label> Notes:
-  <textarea type="text-area" name="notes" placeholder="Instead of 1 tsp of salt, use only half tsp."></textarea>
+<label class="title-label"> NOTES:
+  <textarea type="text-area" name="notes" class="form-control" rows="10" placeholder="Instead of 1 tsp of salt, use only half tsp."></textarea>
 </label>
-<label> Ingredients:
-  <input type="text" name="ingredients">
+<label class="title-label"> INGREDIENTS:
+  <input type="text" class="form-control" name="ingredients">
 </label>
-<button type="submit">Add Recipe</button>
-<a href="/ingredients/new"><button>Add ingredients</button></a>
+<button class="btn btn-outline-secondary" type="submit">Add Recipe</button>
+<a href="/ingredients/new"><button class="btn btn-outline-secondary">Add ingredients</button></a>
 </form>
 </div>
 </div>
+</div>
+</main>
 
 
 <%- include('../partials/footer') %>

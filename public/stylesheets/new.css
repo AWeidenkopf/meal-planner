@@ -1,21 +1,26 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  line-height: 1.5;
+  background-color: #50603f;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-
-nav {
-  position: absolute;
-  width: 100%
-}
-
 
 .new-recipe-card {
-  margin: 15vh 10vw;
-  width: 800px;
-  height: 500px;
-  border: 2px solid;
-  border-radius: 10px;
-  background-color: white;
+  width: 55vw;
+  max-width: 100%;
+  background-color: #faf9f4;
+  padding: 30px;
+  margin: 20vh auto;
+  box-shadow: 0 0 5px rgba(75, 75, 75, 0.6);
 }
 
 .card-head{
@@ -27,24 +32,21 @@ nav {
   text-align: center;
 }
 
-
-.card-body {
+.card-body{
   display: flex;
-  text-align: center;
-
+  flex-wrap: wrap;
 }
 
 form {
     font-size: 20px;
-    width: 300px;
+    width: 100%;
     text-align: center;
 }
 
-input {
-  display: block;
-  width: 796px;
-  background-color: white;
-  border: 1px solid #91a181;
+.title-label {
+  font-size: 20px;
+  margin: 15px auto;
+  color: #50603f;
 }
 
 label {
@@ -58,12 +60,4 @@ textarea {
   border: 1px solid #91a181;
 }
 
-button {
-  margin: 10px auto;
-  display: inline-block;
-  width: 200px;
-  color: #50603f;
-  background-color: rgb(204, 213, 174);
-  border: 1px solid rgb(204, 213, 174);
-  border-radius: 10px;
-}
+
