@@ -45,6 +45,24 @@
 
         </div>
         <button class="edit-btn"><a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a></button>
+        <form action="/calendar" method="POST">
+        <select name="day">
+          <option value="Sunday" >Sunday</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+      </select>
+      <select name="meal">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+    </select>
+    <input name="recipe" value="<%= recipe._id %>" hidden>
+    <button type="submit">Add to calendar</button>
+  </form>
       </div>
     </main>
 
