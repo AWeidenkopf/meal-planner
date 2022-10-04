@@ -6,12 +6,20 @@
       <div class="container">
         <div class="wrap">
           <div class="content">
-            <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
-              <label for="title-box" class="title-label"> TITLE: </label>
-              <input type="text" name="title" id="title-box" value="<%= recipe.title %>"
-                placeholder="<%= recipe.title %>" width="100%">
-              <button type="submit" class="btn">Update Title</button>
-            </form>
+
+            <label for="title-box" class="title-label"> TITLE: </label>
+            <div class="input-group mb-3">
+              <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
+                <input type="text" name="title" class="form-control" value="<%= recipe.title %>"
+                  placeholder="<%= recipe.title %>" aria-label="Recipient's username" aria-describedby="button-addon2"
+                  width="100%">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Update Title</button>
+              </form>
+            </div>
+
+
+
+
 
             <div class="ingredient-title"> INGREDIENTS </div>
             <div class="ingredient-box">
@@ -21,30 +29,35 @@
                     <%= ingredient.name %>
                       <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>?_method=DELETE"
                         method="POST" style="display: inline-block;">
-                        <button class="delete-btn" type="submit">X</button>
+                        <button class="delete-btn" type="submit">🗑️</button>
                       </form>
                   </li>
                   <% }) %>
               </ul>
-              <a href="/ingredients/new"><button>Create Ingredients</button></a>
             </div>
 
-            <form id="add-to-recipe" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
-              <select name="ingredientId">
-                <% ingredients.forEach(ingredient=> { %>
-                  <option value="<%= ingredient._id %>">
-                    <%= ingredient.name %>
-                  </option>
-                  <% }) %>
-              </select>
-              <button type="submit" class="btn">Add ingredient</button>
-            </form>
+            <div class="input-group mb-3">
+              <form id="add-to-recipe" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
+                <select name="ingredientId" class="form-control select" aria-label="Recipient's username"
+                  aria-describedby="button-addon2" width="100%">
+                  <% ingredients.forEach(ingredient=> { %>
+                    <option value="<%= ingredient._id %>">
+                      <%= ingredient.name %>
+                    </option>
+                    <% }) %>
+                </select>
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Add ingredient</button>
+              </form>
+            </div>
+            <a href="/ingredients/new">
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Edit ingredient list</button>
+            </a>
 
             <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
               <div class="instructions-title">INSTRUCTIONS</div>
               <textarea type="text-area" class="text-area" name="instructions" cols="30" rows="20"
                 value="<%= recipe.instructions %>"><%= recipe.instructions %></textarea>
-              <button type="submit" class="btn">Update Instructions</button>
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Update Instructions</button>
             </form>
 
             <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
@@ -52,22 +65,16 @@
               <textarea type="text-area" class="text-area" name="notes" value="<%= recipe.notes %>">
                 <%= recipe.notes %>
               </textarea>
-              <button type="submit" class="btn">Update Notes</button>
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Update Notes</button>
             </form>
 
             <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-              <button class="btn">Delete Recipe</button>
-            </form>
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon3">Delete Recipe</button>
             </form>
 
           </div>
         </div>
       </div>
     </main>
-
-    <!-- </div>
-<a href="/ingredients/new"><button>Add ingredients</button></a>
-</div>
-</form> -->
 
     <%- include('../partials/footer') %>

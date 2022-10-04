@@ -27,7 +27,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5em;
-}
+} */
 
 #title-box {
   width: 100%;
@@ -63,13 +63,27 @@ ul>li {
 .text-area {
   width: 100%;
   padding: 5px 10px;
+  border: 0.5px solid rgb(205, 203, 203);
+  border-radius: 5px;
 }
 
-.btn {
+.input-group {
   display: inline-block;
-  width: 200px;
-  color: #50603f;
-  background-color: rgb(204, 213, 174);
-  border: 1px solid rgb(204, 213, 174);
-  border-radius: 10px;
+}
+
+.form-control {
+  display: inline-block;
+  width: 80%;
+}
+
+#button-addon2{
+  margin-top: -3px;
+}
+
+.select {
+  width: 70%;
+}
+
+#button-addon3 {
+  margin-top: 40px;
 }
