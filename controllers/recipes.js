@@ -1,6 +1,7 @@
 import { Recipe } from '../models/recipe.js'
 import { Profile } from '../models/profile.js'
 import { Ingredient } from '../models/ingredient.js'
+import { Calendar } from '../models/calendar.js'
 
 function index(req, res) {
   Recipe.find({})
