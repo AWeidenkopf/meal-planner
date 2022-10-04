@@ -66,7 +66,8 @@ function edit(req, res) {
   Recipe.findById(req.params.id) 
   .populate('ingredients')
   .then(recipe => {
-    Ingredient.find({_id: {$nin: recipe.ingredients}})
+    // Ingredient.find({_id: {$nin: recipe.ingredients}})
+    Ingredient.find({id: {$nin: recipe.ingredients}})
     .then(ingredients => { 
     res.render('recipes/edit', {
       recipe,
@@ -118,6 +119,21 @@ function addToList(req, res) {
   })
 }
 
+function deleteIngredient(req, res) {
+  Recipe.findById(req.params.id)
+  .then(recipe => {
+    recipe.ingredients.remove({_id: req.params.ingredientId})
+    recipe.save()
+    .then(()=> {
+      res.redirect(`/recipes/${req.params.id}/edit`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/recipes/${req.params.id}`)
+  })
+}
+
 export {
   index,
   newRecipe as new,
@@ -126,5 +142,6 @@ export {
   edit,
   update,
   deleteRecipe as delete,
-  addToList
+  addToList,
+  deleteIngredient 
 }

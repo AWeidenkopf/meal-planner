@@ -2,15 +2,6 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-// const ingredientSchema = new Schema({
-//   ingredient: {
-//     type: String,
-//   },
-// }, {
-//   timestamps: true,
-// })
-
-
 const recipeSchema = new Schema({
   title: {
     type: String,

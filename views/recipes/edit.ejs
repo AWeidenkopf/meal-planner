@@ -1,32 +1,73 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/new.css" />
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/edit.css" />
+  <%- include('../partials/nav') %>
 
-<div class="new-recipe-card">
-  <div class="card-head">
-    <h1><%= recipe.title %></h1>
-  </div>
-  <div class="card-body">
-<form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
-<label> Recipe's title:
-  <input type="text" name="title" value="<%= recipe.title %>" placeholder="<%= recipe.title %>">
-</label>
-<label> Instructions:
-  <textarea type="text-area" name="instructions" value="<%= recipe.instructions %>" placeholder="<%= recipe.instructions %>"></textarea>
-</label>
-<label> Notes:
-  <textarea type="text-area" name="notes" value="<%= recipe.notes %>" placeholder="<%= recipe.notes %>"></textarea>
-</label>
-<div> Ingredients </div>
-<ul>
-  <% recipe.ingredients.forEach(ingredient => { %>
-    <li><%= ingredient.name %></li>
-  <% }) %>
-</ul>
-<button type="submit">Update Recipe</button>
-</form>
+    <main>
+      <div class="container">
+        <div class="wrap">
+          <div class="content">
+            <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
+              <label for="title-box" class="title-label"> TITLE: </label>
+              <input type="text" name="title" id="title-box" value="<%= recipe.title %>"
+                placeholder="<%= recipe.title %>" width="100%">
+              <button type="submit" class="btn">Update Title</button>
+            </form>
+
+            <div class="ingredient-title"> INGREDIENTS </div>
+            <div class="ingredient-box">
+              <ul>
+                <% recipe.ingredients.forEach(ingredient=> { %>
+                  <li>
+                    <%= ingredient.name %>
+                      <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>?_method=DELETE"
+                        method="POST" style="display: inline-block;">
+                        <button class="delete-btn" type="submit">X</button>
+                      </form>
+                  </li>
+                  <% }) %>
+              </ul>
+              <a href="/ingredients/new"><button>Create Ingredients</button></a>
+            </div>
+
+            <form id="add-to-recipe" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
+              <select name="ingredientId">
+                <% ingredients.forEach(ingredient=> { %>
+                  <option value="<%= ingredient._id %>">
+                    <%= ingredient.name %>
+                  </option>
+                  <% }) %>
+              </select>
+              <button type="submit" class="btn">Add ingredient</button>
+            </form>
+
+            <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
+              <div class="instructions-title">INSTRUCTIONS</div>
+              <textarea type="text-area" class="text-area" name="instructions" cols="30" rows="20"
+                value="<%= recipe.instructions %>"><%= recipe.instructions %></textarea>
+              <button type="submit" class="btn">Update Instructions</button>
+            </form>
+
+            <form action="/recipes/<%= recipe._id %>?_method=PUT" method="post">
+              <div class="notes-title">NOTES</div>
+              <textarea type="text-area" class="text-area" name="notes" value="<%= recipe.notes %>">
+                <%= recipe.notes %>
+              </textarea>
+              <button type="submit" class="btn">Update Notes</button>
+            </form>
+
+            <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+              <button class="btn">Delete Recipe</button>
+            </form>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- </div>
 <a href="/ingredients/new"><button>Add ingredients</button></a>
 </div>
-</div>
+</form> -->
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

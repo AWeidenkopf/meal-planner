@@ -30,8 +30,8 @@ main{
 }
 
 .content {
-  width: 600px;
-  float: left;
+  border: 1px solid black;
+  padding: 20px 30px;
 }
 
 .content>span {
@@ -65,27 +65,30 @@ main{
 
 ul>li {
   text-align: left;
+  list-style: none;
 }
 
-.instructions-title {
+li::before {
+  content: "\2022";
+  color: #50603f;
+  display: inline-block;
+  font-size: 24px;
+  width: 1em;
+}
+
+ul>li {
+  color: black;
+}
+
+.instructions-title, 
+.notes-title {
   font-size: 20px;
   margin: 15px auto;
   color: #50603f;
 }
 
-button {
-  margin: 10px auto;
-  margin-left: -30px;
-  display: inline-block;
-  width: 200px;
-  color: #50603f;
-  background-color: rgb(204, 213, 174);
-  border: 1px solid rgb(204, 213, 174);
-  border-radius: 10px;
-}
-
 button>a {
-  text-decoration: none;
+  text-decoration: underline;
   color: #50603f;
 }
 
@@ -96,4 +99,15 @@ button:hover {
 
 a:hover {
   color: #50603f;
+}
+
+.edit-btn {
+  margin: 30px auto;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  color: #50603f;
+  background-color: rgb(204, 213, 174);
+  border: 1px solid rgb(204, 213, 174);
+  border-radius: 5px;
 }

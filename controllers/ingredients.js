@@ -1,5 +1,6 @@
 import { Ingredient} from '../models/ingredient.js'
 import { Profile } from '../models/profile.js'
+import { Recipe } from '../models/recipe.js'
 
 function newIngredient(req, res) {
   Ingredient.find({})
@@ -26,7 +27,9 @@ function create(req, res) {
   })
 }
 
+
+
 export {
   newIngredient as new,
-  create
+  create,
 }

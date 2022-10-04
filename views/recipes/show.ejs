@@ -1,44 +1,51 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/show.css" />
-<%- include('../partials/nav') %>
-<main>
-<div class="container">
-  <div class="wrap">
-    <div class="content">
-      <span class="name"><%= recipe.author.name %></span>
-      <!-- <div class="img">
+  <link rel="stylesheet" href="/stylesheets/show.css" />
+  <%- include('../partials/nav') %>
+    <main>
+      <div class="container">
+        <div class="wrap">
+          <div class="content">
+            <span class="name">
+              <%= recipe.author.name %>
+            </span>
+            <!-- <div class="img">
         <img src="https://i.ibb.co/jGCTfFJ/Instant-Pot-Vegetarian-Chili-Canned-Beans-600x747.jpg" width="400px">
       </div> -->
-  <div class="recipe-title"><%= recipe.title %></div>
-  <div class="ingredient-title">INGREDIENTS</div>
-  <ul>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <li><%= ingredient.name %></li>
-    <% }) %>
-  </ul>
 
-  <!-- <form id="add-to-recipe" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
-    <select name="ingredientId">
-      <% ingredients.forEach(ingredient => { %>
-        <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
-      <% }) %>
-    </select>
-    <button type="submit">Add ingredient</button>
-  </form> -->
+            <div class="recipe-title">
+              <%= recipe.title %>
+            </div>
+            <div class="ingredient-title">
+              INGREDIENTS
+            </div>
+            <ul>
+              <% recipe.ingredients.forEach(ingredient=> { %>
+                <li>
+                  <%= ingredient.name %>
+                </li>
+                <% }) %>
+            </ul>
+            
+            <div class="instructions-title">
+              INSTRUCTIONS
+            </div>
+            <div>
+              <%= recipe.instructions %>
+            </div>
 
-  <!-- <a href="/ingredients/new"><button>Create Ingredients</button></a> -->
-  <div class="instructions-title">INSTRUCTIONS</div>
-  <div id="title-divider"></div>
-  <div><%= recipe.instructions %></div>
-  <div >NOTES</div>
-  <div><%= recipe.notes %></div>
-</div>
-</form>
-</div>
-<button class="edit-btn"><a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a></button>
-<form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-<button>Delete Recipe</button>
-</div>
-</main>
+            <div class="notes-title">
+              NOTES
+            </div>
+            <div>
+              <%= recipe.notes %>
+            </div>
 
-<%- include('../partials/footer') %>
+          </div>
+          </form>
+
+        </div>
+        <button class="edit-btn"><a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a></button>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>

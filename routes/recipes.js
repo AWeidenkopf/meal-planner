@@ -19,6 +19,8 @@ router.put('/:id', recipesCtrl.update)
 
 router.delete('/:id', recipesCtrl.delete)
 
+router.delete('/:id/ingredients/:ingredientId', recipesCtrl.deleteIngredient)
+
 export {
   router
 }
