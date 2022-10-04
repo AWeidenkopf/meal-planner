@@ -1,1 +1,24 @@
-<h1>I'm a grocery list</h1>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<div class="grocery-list-container">
+  <h1>I'm a grocery list</h1>
+  <form action="/groceries" method="POST">
+    <label for="new-item">New Item:</label>
+    <input type="text" name="item" id="new-item">
+    <button type="submit">Add Item</button>
+  </form>
+
+  <div class="items-container">
+    <% groceries.forEach(groceryItem => { %>
+      <% console.log(groceryItem) %>
+      <input type="checkbox" value="<%= groceryItem.item %>"><%= groceryItem.item %>
+      <% if(groceryItem.ingredient.length) { %>
+      <input type="checkbox" value="<%= groceryItem.ingredient %>"><%= groceryItem.ingredient %>
+      <% } %>
+    <% }) %> 
+  </div>
+
+</div>
+
+<%- include('../partials/footer') %>

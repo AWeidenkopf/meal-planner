@@ -5,6 +5,8 @@ const router = Router()
 
 router.get('/', groceryListCtrl.index)
 
+router.post('/', groceryListCtrl.create)
+
 export {
   router
 }

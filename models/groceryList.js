@@ -7,9 +7,9 @@ const groceryListSchema = new Schema({
     type: Schema.Types.ObjectId, 
     ref: "Ingredient"
   }],
-  item: [{
+  item: {
     type: String,
-  }],
+  },
 }, {
   timestamps: true,
 })
