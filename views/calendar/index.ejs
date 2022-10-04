@@ -2,53 +2,221 @@
   <link rel="stylesheet" href="/stylesheets/calendar.css" />
 <%- include('../partials/nav') %>
 
-<main>
-<h1><%= title  %></h1> 
-<div class="container">
-<div class="schedule_container">
-  <div class="days_container">
-    <span class="corner"></span>
-    <div class="day">SUNDAY</div>
-    <div class="day">MONDAY</div>
-    <div class="day">TUESDAY</div>
-    <div class="day">WEDNESDAY</div>
-    <div class="day">THURSDAY</div>
-    <div class="day">FRIDAY</div>
-    <div class="day">SATURDAY</div>
-  </div>
-  <div class="meal_time">
-    <span class="time">Breakfast</span>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-  </div>
-  <div class="meal_time">
-    <span class="time">Lunch</span>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-  </div>
-  <div class="meal_time">
-    <span class="time">Dinner</span>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-    <div class="meal"></div>
-  </div>
-</div>
-</div>
-</main>
+<!-- SUNDAY -->
+
+<% let sundayBreakfast %>
+<% let sundayLunch %>
+<% let sundayDinner %>
+<% schedules.forEach(schedule=> { %>
+  <% if(schedule.day.toString()==='Sunday' ) {%>
+    <% if( schedule.meal.toString()==='Breakfast' ) {%>
+      <% sundayBreakfast = schedule.recipe.title %>
+    <% } if( schedule.meal.toString()==='Lunch' ) {%>
+      <% sundayLunch = schedule.recipe.title %>
+    <% } else if( schedule.meal.toString()==='Dinner' ) {%>
+      <% sundayDinner = schedule.recipe.title %>
+    <% } %>
+  <% } %> 
+<% }); %>
+
+<!-- MONDAY -->
+
+<% let mondayBreakfast %>
+<% let mondayLunch %>
+<% let mondayDinner %>
+<% schedules.forEach(schedule=> { %>
+  <% if(schedule.day.toString()==='Monday' ) {%>
+    <% if( schedule.meal.toString()==='Breakfast' ) {%>
+        <% mondayBreakfast = schedule.recipe.title %>
+    <% } if( schedule.meal.toString()==='Lunch' ) {%>
+        <% mondayLunch = schedule.recipe.title %>
+    <% } else if( schedule.meal.toString()==='Dinner' ) {%>
+        <% mondayDinner = schedule.recipe.title %>
+    <% } %>
+  <% } %> 
+<% }); %>
+
+<!-- TUESDAY -->
+
+<% let tuesdayBreakfast %>
+<% let tuesdayLunch %>
+<% let tuesdayDinner %>
+<% schedules.forEach(schedule=> { %>
+  <% if(schedule.day.toString()==='Tuesday' ) {%>
+    <% if( schedule.meal.toString()==='Breakfast' ) {%>
+      <% tuesdayBreakfast = schedule.recipe.title %>
+    <% } if( schedule.meal.toString()==='Lunch' ) {%>
+      <% tuesdayLunch = schedule.recipe.title %>
+    <% } else if( schedule.meal.toString()==='Dinner' ) {%>
+      <% tuesdayDinner = schedule.recipe.title %>
+    <% } %>
+  <% } %> 
+<% }); %>
+
+<!-- WEDNESDAY -->
+
+<% let wednesdayBreakfast %>
+<% let wednesdayLunch %>
+<% let wednesdayDinner %>
+<% schedules.forEach(schedule=> { %>
+  <% if(schedule.day.toString()==='Wednesday' ) {%>
+    <% if( schedule.meal.toString()==='Breakfast' ) {%>
+      <% wednesdayBreakfast = schedule.recipe.title %>
+    <% } if( schedule.meal.toString()==='Lunch' ) {%>
+      <% wednesdayLunch = schedule.recipe.title %>
+    <% } else if( schedule.meal.toString()==='Dinner' ) {%>
+      <% wednesdayDinner = schedule.recipe.title %>
+    <% } %>
+  <% } %> 
+<% }); %>
+
+<!-- THURSDAY -->
+
+<% let thursdayBreakfast %>
+<% let thursdayLunch %>
+<% let thursdayDinner %>
+<% schedules.forEach(schedule=> { %>
+  <% if(schedule.day.toString()==='Thursday' ) {%>
+    <% if( schedule.meal.toString()==='Breakfast' ) {%>
+      <% thursdayBreakfast = schedule.recipe.title %>
+    <% } if( schedule.meal.toString()==='Lunch' ) {%>
+      <% thursdayLunch = schedule.recipe.title %>
+    <% } else if( schedule.meal.toString()==='Dinner' ) {%>
+      <% thursdayDinner = schedule.recipe.title %>
+    <% } %>
+  <% } %> 
+<% }); %>
+
+<!-- FRIDAY -->
+
+<% let fridayBreakfast %>
+<% let fridayLunch %>
+<% let fridayDinner %>
+<% schedules.forEach(schedule=> { %>
+  <% if(schedule.day.toString()==='Friday' ) {%>
+    <% if( schedule.meal.toString()==='Breakfast' ) {%>
+      <% fridayBreakfast = schedule.recipe.title %>
+    <% } if( schedule.meal.toString()==='Lunch' ) {%>
+      <% fridayLunch = schedule.recipe.title %>
+    <% } else if( schedule.meal.toString()==='Dinner' ) {%>
+      <% fridayDinner = schedule.recipe.title %>
+    <% } %>
+  <% } %> 
+<% }); %>
+
+<!-- SATURDAY -->
+
+<% let saturdayBreakfast %>
+<% let saturdayLunch %>
+<% let saturdayDinner %>
+<% schedules.forEach(schedule=> { %>
+  <% if(schedule.day.toString()==='Saturday' ) {%>
+    <% if( schedule.meal.toString()==='Breakfast' ) {%>
+      <% saturdayBreakfast = schedule.recipe.title %>
+    <% } if( schedule.meal.toString()==='Lunch' ) {%>
+      <% saturdayLunch = schedule.recipe.title %>
+    <% } else if( schedule.meal.toString()==='Dinner' ) {%>
+      <% saturdayDinner = schedule.recipe.title %>
+    <% } %>
+  <% } %> 
+<% }); %>
+
+
+
+
+  <main>
+    <h1>
+      <%= title %>
+    </h1>
+    <div class="container">
+      <div class="schedule_container">
+        <div class="days_container">
+          <span class="corner"></span>
+          <div class="day">SUNDAY</div>
+          <div class="day">MONDAY</div>
+          <div class="day">TUESDAY</div>
+          <div class="day">WEDNESDAY</div>
+          <div class="day">THURSDAY</div>
+          <div class="day">FRIDAY</div>
+          <div class="day">SATURDAY</div>
+        </div>
+      <div class="meal_time">
+        <span class="time">Breakfast</span>
+        <div class="meal">
+          <%= sundayBreakfast %>
+        </div>
+        <div class="meal">
+          <%= mondayBreakfast %>
+        </div>
+        <div class="meal">
+          <%= tuesdayBreakfast %>
+        </div>
+        <div class="meal">
+          <%= wednesdayBreakfast %>
+        </div>
+        <div class="meal">
+          <%= thursdayBreakfast %>
+        </div>
+        <div class="meal">
+          <%= fridayBreakfast %>
+        </div>
+        <div class="meal">
+          <%= saturdayBreakfast %>
+        </div>
+      </div>
+
+      <div class="meal_time">
+        <span class="time">Lunch</span>
+          <div class="meal">
+            <%= sundayLunch %>
+          </div>
+          <div class="meal">
+            <%= mondayLunch %>
+          </div>
+          <div class="meal">
+            <%= tuesdayLunch %>
+          </div>
+          <div class="meal">
+            <%= wednesdayLunch %>
+          </div>
+          <div class="meal">
+            <%= thursdayLunch %>
+          </div>
+          <div class="meal">
+            <%= fridayLunch %>
+          </div>
+          <div class="meal">
+            <%= saturdayLunch %>
+          </div>
+        </div>
+
+          <div class="meal_time">
+            <span class="time">Dinner</span>
+          <div class="meal">
+            <%= sundayDinner %>
+          </div>
+          <div class="meal">
+            <%= mondayDinner %>
+          </div>
+          <div class="meal">
+            <%= tuesdayDinner %>
+          </div>
+          <div class="meal">
+            <%= wednesdayDinner %>
+          </div>
+          <div class="meal">
+            <%= thursdayDinner %>
+          </div>
+          <div class="meal">
+            <%= fridayDinner %>
+          </div>
+          <div class="meal">
+            <%= saturdayDinner %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
 
 

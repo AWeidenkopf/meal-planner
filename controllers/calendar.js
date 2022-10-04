@@ -14,10 +14,14 @@ function index(req, res) {
 }
 
 function create(req, res){
-  Calendar.create(req.body)
+  let filter = {day: req.body.day, meal: req.body.meal}
+  console.log(filter)
+  Calendar.findOneAndUpdate(filter, req.body, {
+    new: true,
+    upsert: true
+  })
   .then(day => {
     day.save()
-    console.log(day)
     res.redirect('/calendar')
   })
 }
