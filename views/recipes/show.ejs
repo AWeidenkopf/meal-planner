@@ -1,13 +1,16 @@
 <%- include('../partials/html-head') %>
-  <link rel="stylesheet" href="/stylesheets/show.css" />
-  <%- include('../partials/nav') %>
-    <main>
-      <div class="container">
-        <div class="wrap">
-          <div class="content">
-            <span class="name">
-              <%= recipe.author.name %>
-            </span>
+<link rel="stylesheet" href="/stylesheets/show.css" />
+<%- include('../partials/nav') %>
+<main>
+  <div class="container">
+    <div class="wrap">
+      <div class="content">
+        <span class="name">
+          <%= recipe.author.name %>
+        </span>
+        <% if (recipe.author.equals(user?.profile._id)) { %>
+          <a href="/recipes/<%= recipe._id %>/edit" class="span-line"> ✏️ EDIT RECIPE </a>
+          <% } %>
             <!-- <div class="img">
         <img src="https://i.ibb.co/jGCTfFJ/Instant-Pot-Vegetarian-Chili-Canned-Beans-600x747.jpg" width="400px">
       </div> -->
@@ -25,11 +28,11 @@
                 </li>
                 <% }) %>
             </ul>
-            
+
             <div class="instructions-title">
               INSTRUCTIONS
             </div>
-            <div>
+            <div class="instructions-div">
               <%= recipe.instructions %>
             </div>
 
@@ -37,33 +40,35 @@
               NOTES
             </div>
             <div>
+
               <%= recipe.notes %>
+
             </div>
 
           </div>
           </form>
 
         </div>
-        <button class="btn btn-outline-secondary" id="button-addon2"><a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a></button>
-        
         <form action="/calendar" method="POST">
-        <select name="day" class="dropdown-center">
-          <option class="dropdown-item" value="Sunday" >Sunday</option>
-          <option class="dropdown-item" value="Monday">Monday</option>
-          <option class="dropdown-item" value="Tuesday">Tuesday</option>
-          <option class="dropdown-item" value="Wednesday">Wednesday</option>
-          <option class="dropdown-item" value="Thursday">Thursday</option>
-          <option class="dropdown-item" value="Friday">Friday</option>
-          <option class="dropdown-item" value="Saturday">Saturday</option>
-      </select>
-      <select name="meal">
-        <option value="Breakfast">Breakfast</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Dinner">Dinner</option>
-    </select>
-    <input name="recipe" value="<%= recipe._id %>" hidden>
-    <button class="btn btn-outline-secondary" type="submit">Add to calendar</button>
-  </form>
+              <div class="input-group">
+              <select name="day" aria-label="First name" class="form-control">
+                <option class="dropdown-item" value="Sunday">Sunday</option>
+                <option class="dropdown-item" value="Monday">Monday</option>
+                <option class="dropdown-item" value="Tuesday">Tuesday</option>
+                <option class="dropdown-item" value="Wednesday">Wednesday</option>
+                <option class="dropdown-item" value="Thursday">Thursday</option>
+                <option class="dropdown-item" value="Friday">Friday</option>
+                <option class="dropdown-item" value="Saturday">Saturday</option>
+              </select>
+              <select name="meal" aria-label="Last name" class="form-control">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+              </select>
+              <input name="recipe" value="<%= recipe._id %>" hidden>
+              <button class="input-group-text" type="submit">Add to calendar</button>
+            </div>
+            </form>
       </div>
     </main>
 

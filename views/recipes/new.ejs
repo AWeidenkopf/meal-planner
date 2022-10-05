@@ -10,16 +10,16 @@
   <div class="card-body">
 <form action="/recipes" method="post">
 <label class="title-label"> TITLE:
-  <input type="text" name="title"  class="form-control" placeholder="Vegetarian Chili">
+  <input type="text" name="title"  class="form-control" placeholder="Vegetarian Chili" required>
 </label>
 <label class="title-label"> INSTRUCTIONS:
-  <textarea type="text-area" name="instructions"  class="form-control" cols="5" rows="20" placeholder="Sautée onions ... "></textarea>
+  <textarea type="text-area" name="instructions"  class="form-control" cols="5" rows="20" placeholder="Sautée onions ... " required></textarea>
 </label>
 <label class="title-label"> NOTES:
   <textarea type="text-area" name="notes" class="form-control" rows="10" placeholder="Instead of 1 tsp of salt, use only half tsp."></textarea>
 </label>
 <label class="title-label"> INGREDIENTS:
-  <input type="text" class="form-control" name="ingredients">
+  <input type="text" class="form-control" name="ingredients" required>
 </label>
 <button class="btn btn-outline-secondary" type="submit">Add Recipe</button>
 <a href="/ingredients/new"><button class="btn btn-outline-secondary">Add ingredients</button></a>

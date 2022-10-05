@@ -17,6 +17,7 @@ main{
 .container {
   width: 55vw;
   max-width: 100%;
+  min-height: 1000px;
   background-color: #faf9f4;
   padding: 30px;
   margin: 20vh auto;
@@ -30,12 +31,28 @@ main{
 }
 
 .content {
+  width: 100%;
+  min-height: 1000px;
   border: 1px solid black;
   padding: 20px 30px;
 }
 
 .content>span {
-  float: left;
+  width: 100%;
+  text-align: left;
+  margin-right: 30%;
+  margin-bottom: 30px;
+}
+
+.span-line{
+  margin-left: 20%;
+  text-decoration: none;
+  color: #50603f;
+  font-size: 18px;
+}
+
+.span-line:hover{
+  text-decoration: underline;
 }
 
 /* .img {
@@ -52,14 +69,16 @@ main{
 }
 
 .recipe-title {
-  display: inline-block;
+  display: inline;
+  text-align: center;
+  width: 100%;
   font-size: 45px;
   margin: 10px auto;
 }
 
 .ingredient-title {
   font-size: 20px;
-  margin: 15px auto;
+  margin: 20px auto;
   color: #50603f;
 }
 
@@ -87,27 +106,21 @@ ul>li {
   color: #50603f;
 }
 
-button>a {
-  text-decoration: underline;
-  color: #50603f;
+.instructions-div{
+  min-height: 400px;
 }
 
-button:hover {
-  color: #50603f;
-  font-weight: bold;
-}
 
 a:hover {
   color: #50603f;
 }
 
-.edit-btn {
-  margin: 30px auto;
-  display: inline-block;
-  width: 100px;
-  height: 30px;
-  color: #50603f;
-  background-color: rgb(204, 213, 174);
-  border: 1px solid rgb(204, 213, 174);
-  border-radius: 5px;
+form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #50603f;
+  color: #faf9f4;
 }
