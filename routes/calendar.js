@@ -1,11 +1,12 @@
 import { Router } from "express"
 import * as calendarCtrl from '../controllers/calendar.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-router.get('/', calendarCtrl.index)
+router.get('/', isLoggedIn, calendarCtrl.index)
 
-router.post('/', calendarCtrl.create)
+router.post('/', isLoggedIn, calendarCtrl.create)
 
 export {
   router
