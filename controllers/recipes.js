@@ -33,21 +33,45 @@ function newRecipe(req, res) {
 
 function create(req, res) {
   req.body.author = req.user.profile._id
-  for (let key in req.body) {
-    if (req.body[key] === '') delete req.body[key]
+for (let key in req.body) {
+  if (req.body[key] === '') delete req.body[key]
   }
-  Recipe.create(req.body)
-    .then(recipe => {
-      recipe.save()
-      console.log(recipe)
-      res.redirect('/recipes')
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/')
-    })
-}
-
+  console.log(req.body.ingredients)
+  Recipe.create({title: req.body.title, author: req.body.author, instructions: req.body.instructions, notes: req.body.notes})
+  .then(recipe => {
+    recipe.save()
+    req.body.ingredients = req.body.ingredients.split(', ')
+    for(let i = 0; i < req.body.ingredients.length; i++) {
+        let currIngredient = req.body.ingredients[i]
+        Ingredient.findOneAndUpdate({name: currIngredient}, {name: currIngredient},{
+          new: true,
+          upsert: true
+        })
+        .then(ingredient => {
+          ingredient.save()
+        Recipe.findOne({title: recipe.title}) 
+        .then(recipe => {
+          recipe.ingredients.push(ingredient._id)
+              recipe.save()
+            })
+            .catch(err => {
+              console.log(err)
+              res.redirect('/')
+            })
+          })
+          .catch(err => {
+            console.log(err)
+            res.redirect('/')
+          })
+        }
+        res.redirect('/recipes')
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/')
+      })
+    }
+    
 function show(req, res) {
   Recipe.findById(req.params.id)
     .populate('ingredients author')
