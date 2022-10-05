@@ -5,7 +5,7 @@
 <body>
   <nav>
     <% if (user) { %>
-      <a href="/recipes">All Recipes</a>
+      <a href="/recipes" <%- title === 'All Recipes' ? 'class="active"' : '' %>>All Recipes</a>
       <a href="/calendar">Calendar</a>
       <a href="/groceries">Grocery List</a>
 
