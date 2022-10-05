@@ -147,7 +147,7 @@ function addToList(req, res) {
       recipe.ingredients.push(req.body.ingredientId)
       recipe.save()
         .then(() => {
-          res.redirect(`/recipes/${recipe._id}`)
+          res.redirect(`/recipes/${recipe._id}/edit`)
         })
     })
 }

@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
   <link rel="stylesheet" href="/stylesheets/edit.css" />
   <%- include('../partials/nav') %>
-
+  <% if (recipe.author.equals(user?.profile._id)) { %>
     <main>
       <div class="container">
         <div class="wrap">
@@ -13,7 +13,7 @@
                 <input type="text" name="title" class="form-control" value="<%= recipe.title %>"
                   placeholder="<%= recipe.title %>" aria-label="Recipient's username" aria-describedby="button-addon2"
                   width="100%">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Update Title</button>
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Update Title</button>
               </form>
             </div>
 
@@ -27,19 +27,20 @@
                 <% recipe.ingredients.forEach(ingredient=> { %>
                   <li>
                     <%= ingredient.name %>
-                      <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>?_method=DELETE"
-                        method="POST" style="display: inline-block;">
-                        <button class="delete-btn" type="submit">X</button>
-                      </form>
+                    <form action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id %>?_method=DELETE"
+                      method="POST" style="display: inline-block;">
+                      <button class="delete-btn" type="submit">X</button>
+                    </form>
                   </li>
                   <% }) %>
-              </ul>
-            </div>
-
-            <div class="input-group mb-3">
-              <form id="add-to-recipe" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
-                <select name="ingredientId" class="form-control select" aria-label="Recipient's username"
+                </ul>
+              </div>
+              
+              <div class="input-group mb-3">
+                <form id="add-to-recipe" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
+                  <select name="ingredientId" class="form-control select" aria-label="Recipient's username"
                   aria-describedby="button-addon2" width="100%">
+                  <option selected disabled>Select a ingredient</option>
                   <% ingredients.forEach(ingredient=> { %>
                     <option value="<%= ingredient._id %>">
                       <%= ingredient.name %>
@@ -76,5 +77,5 @@
         </div>
       </div>
     </main>
-
+    <% } %>
     <%- include('../partials/footer') %>

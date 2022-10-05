@@ -38,17 +38,14 @@ main{
 }
 
 .content>span {
-  width: 100%;
-  text-align: left;
-  margin-right: 30%;
-  margin-bottom: 30px;
+  float: left;
 }
 
 .span-line{
-  margin-left: 20%;
   text-decoration: none;
   color: #50603f;
   font-size: 18px;
+  float: right;
 }
 
 .span-line:hover{
@@ -69,11 +66,13 @@ main{
 }
 
 .recipe-title {
-  display: inline;
+  display: flex;
   text-align: center;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
   font-size: 45px;
-  margin: 10px auto;
+  margin: 30px auto;
+
 }
 
 .ingredient-title {

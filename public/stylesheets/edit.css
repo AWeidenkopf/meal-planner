@@ -22,6 +22,9 @@ main {
   margin: 20vh auto;
   box-shadow: 0 0 5px rgba(75, 75, 75, 0.6);
 }
+.content {
+  width: 100%;
+}
 
 .wrap {
   display: flex;
@@ -49,6 +52,10 @@ ul>li {
   border: 0;
   color: #50603f;
   font-weight: bold;
+}
+
+.btn-outline-secondary{
+  --bs-btn-hover-bg: #50603f;
 }
 
 .ingredient-title,
