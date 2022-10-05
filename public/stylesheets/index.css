@@ -2,10 +2,6 @@
 button {
   width: 200px;
   margin-top: 12vh;
-  color: #50603f;
-  background-color: rgb(204, 213, 174);
-  border: 1px solid rgb(204, 213, 174);
-  border-radius: 10px;
 }
 
 .new-recipe-btn {
@@ -24,6 +20,7 @@ body> h1 {
   text-align: center;
   align-items: center;
   margin: 10px 10px;
+  margin-bottom: 30px;
 }
 
 .card:hover {
@@ -35,5 +32,11 @@ body> h1 {
 }
 
 #footer {
-  position: absolute;
+  margin-top: 30px;
+  bottom: 0px;
+}
+
+#footer> p {
+  margin-top: 20px;
+  bottom: 0px;
 }
