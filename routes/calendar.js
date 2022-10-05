@@ -8,6 +8,8 @@ router.get('/', isLoggedIn, calendarCtrl.index)
 
 router.post('/', isLoggedIn, calendarCtrl.create)
 
+router.delete('/:id', isLoggedIn, calendarCtrl.delete)
+
 export {
   router
 }

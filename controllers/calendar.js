@@ -26,7 +26,21 @@ function create(req, res){
   })
 }
 
+function deleteSchedule(req, res) {
+  console.log("params", req.params.id)
+  Calendar.findByIdAndDelete(req.params.id)
+    .then(schedule => {
+      console.log("deleted", schedule)
+      res.redirect(`/calendar`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+}
+
 export {
   index,
-  create
+  create,
+  deleteSchedule as delete
 }

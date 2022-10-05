@@ -18,7 +18,8 @@ main {
 }
 
 .schedule_container {
-  background-color: #faf9f4;
+  background-color: rgb(204, 213, 174);
+  /* background-color: #faf9f4; */
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -35,7 +36,7 @@ main {
 }
 
 .day {
-  width: 100px;
+  width: 150px;
   border: 1px solid white;
   display: flex;
   justify-content: center;
@@ -60,11 +61,15 @@ main {
 
 .meal {
   height: 70px;
-  width: 100px;
+  width: 150px;
   margin: 2px;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid white;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
 }

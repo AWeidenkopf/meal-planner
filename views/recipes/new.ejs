@@ -18,11 +18,12 @@
 <label class="title-label"> NOTES:
   <textarea type="text-area" name="notes" class="form-control" rows="10" placeholder="Instead of 1 tsp of salt, use only half tsp."></textarea>
 </label>
-<label class="title-label"> INGREDIENTS:
-  <input type="text" class="form-control" name="ingredients" required>
-</label>
+<label class="title-label" for="ingredients-input"> INGREDIENTS: </label>
+  <p class="left">Add ingredients separated by comma. E.g. </p>
+  <span class="left">1 medium yellow onion, 1 tbsp olive oil</span>
+  <input type="text" class="form-control" name="ingredients" id="ingredients-input" required>
+
 <button class="btn btn-outline-secondary" type="submit">Add Recipe</button>
-<a href="/ingredients/new"><button class="btn btn-outline-secondary">Add ingredients</button></a>
 </form>
 </div>
 </div>

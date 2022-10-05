@@ -49,6 +49,15 @@ form {
   color: #50603f;
 }
 
+.left{
+  font-size: 12px;
+  float: left;
+}
+
+.left> p {
+  font-size: 12px;
+}
+
 label {
   display: block;
 }
