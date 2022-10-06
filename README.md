@@ -9,7 +9,7 @@
 
 ## Getting Started
 
-Here's the link where you can try it out: [LINK]
+Here's the link where you can try it out: https://meal-planner-ana-weidenkopf.fly.dev/
 
 ## Tecnologies Used: 
 
