@@ -1,7 +1,8 @@
 ### Meal Planner
+
 ## Motivation 
 
-I decided on making a snake game because I wanted to try making a real-time game without using canvas.
+
 
 ## ScreenShots
 
