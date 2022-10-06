@@ -57,6 +57,7 @@ function handleUpload(req, res, next) {
       req.flash('sucess', req.file.filename)
       imagePath = req.file.filename
 
+      Image.create({path: imagePath})
       return imagePath, next()
     }
   })

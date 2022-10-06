@@ -3,14 +3,8 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const imageSchema = new Schema({
-  name: {
+  path: {
     type: String,
-  },
-  content: {
-    type: String
-  },
-  imageBase64: {
-    String
   }
 }, {
   timestamps: true,
