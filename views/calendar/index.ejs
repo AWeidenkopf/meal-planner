@@ -55,7 +55,7 @@
 
 
 <% schedules.forEach(schedule=> { %> 
-  <% if(schedule.day.toString()==='Sunday' ) {%>
+  <% if(schedule.day.toString()==='Sunday' && schedule.owner.equals(user?.profile._id)) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% sundayBreafastId = schedule._id %>
       <% sundayBreakfast = schedule.recipe.title %>
@@ -72,7 +72,7 @@
 <!-- MONDAY -->
 
 <% schedules.forEach(schedule=> { %>
-  <% if(schedule.day.toString()==='Monday' ) {%>
+  <% if(schedule.day.toString()==='Monday' && schedule.owner.equals(user?.profile._id)) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% mondayBreakfastId = schedule._id %>
         <% mondayBreakfast = schedule.recipe.title %>
@@ -89,7 +89,7 @@
 <!-- TUESDAY -->
 
 <% schedules.forEach(schedule=> { %>
-  <% if(schedule.day.toString()==='Tuesday' ) {%>
+  <% if(schedule.day.toString()==='Tuesday' && schedule.owner.equals(user?.profile._id)) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% tuesdayBreakfastId = schedule._id %>
       <% tuesdayBreakfast = schedule.recipe.title %>
@@ -106,7 +106,7 @@
 <!-- WEDNESDAY -->
 
 <% schedules.forEach(schedule=> { %>
-  <% if(schedule.day.toString()==='Wednesday' ) {%>
+  <% if(schedule.day.toString()==='Wednesday' && schedule.owner.equals(user?.profile._id)) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% wednesdayBreakfastId = schedule._id %>
       <% wednesdayBreakfast = schedule.recipe.title %>
@@ -123,7 +123,7 @@
 <!-- THURSDAY -->
 
 <% schedules.forEach(schedule=> { %>
-  <% if(schedule.day.toString()==='Thursday' ) {%>
+  <% if(schedule.day.toString()==='Thursday' && schedule.owner.equals(user?.profile._id)) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% thursdayBreakfastId = schedule._id%>
       <% thursdayBreakfast = schedule.recipe.title %>
@@ -140,7 +140,7 @@
 <!-- FRIDAY -->
 
 <% schedules.forEach(schedule=> { %>
-  <% if(schedule.day.toString()==='Friday' ) {%>
+  <% if(schedule.day.toString()==='Friday' && schedule.owner.equals(user?.profile._id)) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% fridayBreakfastId = schedule._id%>
       <% fridayBreakfast = schedule.recipe.title %>
@@ -157,7 +157,7 @@
 <!-- SATURDAY -->
 
 <% schedules.forEach(schedule=> { %>
-  <% if(schedule.day.toString()==='Saturday' ) {%>
+  <% if(schedule.day.toString()==='Saturday' && schedule.owner.equals(user?.profile._id)) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% saturdayBreakfastId = schedule._id%>
       <% saturdayBreakfast = schedule.recipe.title %>

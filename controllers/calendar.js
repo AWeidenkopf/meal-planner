@@ -15,8 +15,8 @@ function index(req, res) {
 }
 
 function create(req, res){
-  let filter = {day: req.body.day, meal: req.body.meal}
-  console.log(filter)
+  let filter = {day: req.body.day, meal: req.body.meal, owner: req.body.owner}
+  req.body.owner = req.user.profile._id
   Calendar.findOneAndUpdate(filter, req.body, {
     new: true,
     upsert: true

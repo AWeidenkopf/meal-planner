@@ -11,6 +11,10 @@ const calendarSchema = new Schema({
     type: String,
     enum: ['Breakfast', 'Lunch', 'Dinner']
   },
+  owner: {
+    type: Schema.Types.ObjectId, 
+    ref: 'Profile'
+  },
   recipe: {type: Schema.Types.ObjectId, ref: "Recipe"},
 }, {
   timestamps: true,
