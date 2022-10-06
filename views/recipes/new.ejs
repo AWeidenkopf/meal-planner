@@ -8,9 +8,10 @@
     <h1>New Recipe Card</h1>
   </div>
   <div class="card-body">
-<form action="/recipes" method="post">
-<label class="title-label"> TITLE:
-  <input type="text" name="title"  class="form-control" placeholder="Vegetarian Chili" required>
+    <form action="/recipes" enctype="multipart/form-data" method="post">
+      <label class="title-label"> TITLE:
+        <input type="text" name="title"  class="form-control" placeholder="Vegetarian Chili" required>
+          <input type="file" name="image" accept="images/*">
 </label>
 <label class="title-label"> INSTRUCTIONS:
   <textarea type="text-area" name="instructions"  class="form-control" cols="5" rows="20" placeholder="Sautée onions ... " required></textarea>
@@ -23,7 +24,7 @@
   <span class="left">1 medium yellow onion, 1 tbsp olive oil</span>
   <input type="text" class="form-control" name="ingredients" id="ingredients-input" required>
 
-<button class="btn btn-outline-secondary" type="submit">Add Recipe</button>
+  <button class="btn btn-outline-secondary" type="submit" name="name">ADD RECIPE</button>
 </form>
 </div>
 </div>

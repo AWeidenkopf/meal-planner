@@ -8,6 +8,9 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
+import multer from 'multer'
+import flash from 'connect-flash'
+
 
 // import custom middleware
 import { passDataToView } from './middleware/middleware.js'
@@ -19,12 +22,12 @@ import './config/database.js'
 import'./config/passport.js'
 
 // import routes
-import { router as indexRouter } from './routes/index.js'
+import { router as indexRouter, router } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as recipesRouter } from './routes/recipes.js'
 import { router as ingredientsRouter } from './routes/ingredients.js'
 import { router as calendarRouter } from './routes/calendar.js'
-import { router as groceryListRouter } from './routes/groceries.js'
+// import { router as fileUploadRouter } from './routes/fileupload.js'
 
 // create the express app
 const app = express()
@@ -64,6 +67,18 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
+// upload-image session
+app.use('/assets/images', express.static('assets/images'))
+
+app.use(session({
+  secret: 'imagesupload',
+  cookie: {maxAge: 60000},
+  saveUninitialized: false,
+  resave: false
+}))
+
+app.use(flash())
+
 // custom middleware
 app.use(passDataToView)
 
@@ -73,7 +88,8 @@ app.use('/auth', authRouter)
 app.use('/recipes', recipesRouter)
 app.use('/ingredients', ingredientsRouter)
 app.use('/calendar', calendarRouter)
-app.use('/groceries', groceryListRouter)
+// app.use('/fileupload', fileUploadRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -94,4 +110,4 @@ app.use(function (err, req, res, next) {
   })
 })
 
-export { app }
+export { app, multer }

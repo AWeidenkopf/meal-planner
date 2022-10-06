@@ -14,7 +14,8 @@ const recipeSchema = new Schema({
   instructions: { 
     type: String,
   },
-  notes: String
+  notes: String,
+  image: String
 }, {
   timestamps: true,
 })

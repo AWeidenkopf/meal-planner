@@ -7,8 +7,6 @@
     <% if (user) { %>
       <a href="/recipes" <%- title === 'All Recipes' ? 'class="active"' : '' %>>All Recipes</a>
       <a href="/calendar" <%- title === 'Calendar' ? 'class="active"' : '' %>>Calendar</a>
-      <a href="/groceries">Grocery List</a>
-
       <a href="/auth/logout" class="right">Logout</a>
     <% } else { %>
       <div 
