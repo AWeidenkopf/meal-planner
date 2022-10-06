@@ -18,6 +18,8 @@ Here's the link where you can try it out: https://meal-planner-ana-weidenkopf.fl
 - JavaScript
 - Express.js
 - Node.js
+- MongoDB
+- Mongoose
 
 ## Next Steps: 
 
