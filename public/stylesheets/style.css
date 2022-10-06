@@ -82,3 +82,7 @@ h2 {
 .avatar {
   border-radius: 50%;
 }
+
+.img-div {
+  max-width: 265px;
+}
