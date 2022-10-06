@@ -10,7 +10,51 @@
 <% let sundayLunchId %>
 <% let sundayDinner %>
 <% let sundayDinnerId %>
-<% schedules.forEach(schedule=> { %>
+
+<% let mondayBreakfast %>
+<% let mondayBreakfastId %>
+<% let mondayLunch %>
+<% let mondayLunchId %>
+<% let mondayDinner %>
+<% let mondayDinnerId %>
+
+<% let tuesdayBreakfast %>
+<% let tuesdayBreakfastId %>
+<% let tuesdayLunch %>
+<% let tuesdayLunchId %>
+<% let tuesdayDinner %>
+<% let tuesdayDinnerId %>
+
+<% let wednesdayBreakfast %>
+<% let wednesdayBreakfastId %>
+<% let wednesdayLunch %>
+<% let wednesdayLunchId %>
+<% let wednesdayDinner %>
+<% let wednesdayDinnerId %>
+
+<% let thursdayBreakfast %>
+<% let thursdayBreakfastId %>
+<% let thursdayLunch %>
+<% let thursdayLunchId %>
+<% let thursdayDinner %>
+<% let thursdayDinnerId %>
+
+<% let fridayBreakfast %>
+<% let fridayBreakfastId %>
+<% let fridayLunch %>
+<% let fridayLunchId %>
+<% let fridayDinner %>
+<% let fridayDinnerId %>
+
+<% let saturdayBreakfast %>
+<% let saturdayBreakfastId %>
+<% let saturdayLunch %>
+<% let saturdayLunchId %>
+<% let saturdayDinner %>
+<% let saturdayDinnerId %>
+
+
+<% schedules.forEach(schedule=> { %> 
   <% if(schedule.day.toString()==='Sunday' ) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% sundayBreafastId = schedule._id %>
@@ -27,20 +71,14 @@
 
 <!-- MONDAY -->
 
-<% let mondayBreakfast %>
-<% let mondayBreakfastId %>
-<% let mondayLunch %>
-<% let mondayLunchId %>
-<% let mondayDinner %>
-<% let mondayDinnerId %>
 <% schedules.forEach(schedule=> { %>
   <% if(schedule.day.toString()==='Monday' ) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
       <% mondayBreakfastId = schedule._id %>
         <% mondayBreakfast = schedule.recipe.title %>
     <% } if( schedule.meal.toString()==='Lunch' ) {%>
-      <% mondayBreakfastId = schedule._id %>
-        <% mondayLunchId = schedule.recipe.title %>
+      <% mondayLunchId = schedule._id %>
+        <% mondayLunch = schedule.recipe.title %>
     <% } else if( schedule.meal.toString()==='Dinner' ) {%>
       <% mondayDinnerId = schedule._id %>
         <% mondayDinner = schedule.recipe.title %>
@@ -50,12 +88,6 @@
 
 <!-- TUESDAY -->
 
-<% let tuesdayBreakfast %>
-<% let tuesdayBreakfastId %>
-<% let tuesdayLunch %>
-<% let tuesdayLunchId %>
-<% let tuesdayDinner %>
-<% let tuesdayDinnerId %>
 <% schedules.forEach(schedule=> { %>
   <% if(schedule.day.toString()==='Tuesday' ) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
@@ -73,12 +105,6 @@
 
 <!-- WEDNESDAY -->
 
-<% let wednesdayBreakfast %>
-<% let wednesdayBreakfastId %>
-<% let wednesdayLunch %>
-<% let wednesdayLunchId %>
-<% let wednesdayDinner %>
-<% let wednesdayDinnerId %>
 <% schedules.forEach(schedule=> { %>
   <% if(schedule.day.toString()==='Wednesday' ) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
@@ -96,12 +122,6 @@
 
 <!-- THURSDAY -->
 
-<% let thursdayBreakfast %>
-<% let thursdayBreakfastId %>
-<% let thursdayLunch %>
-<% let thursdayLunchId %>
-<% let thursdayDinner %>
-<% let thursdayDinnerId %>
 <% schedules.forEach(schedule=> { %>
   <% if(schedule.day.toString()==='Thursday' ) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
@@ -119,12 +139,6 @@
 
 <!-- FRIDAY -->
 
-<% let fridayBreakfast %>
-<% let fridayBreakfastId %>
-<% let fridayLunch %>
-<% let fridayLunchId %>
-<% let fridayDinner %>
-<% let fridayDinnerId %>
 <% schedules.forEach(schedule=> { %>
   <% if(schedule.day.toString()==='Friday' ) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
@@ -142,12 +156,6 @@
 
 <!-- SATURDAY -->
 
-<% let saturdayBreakfast %>
-<% let saturdayBreakfastId %>
-<% let saturdayLunch %>
-<% let saturdayLunchId %>
-<% let saturdayDinner %>
-<% let saturdayDinnerId %>
 <% schedules.forEach(schedule=> { %>
   <% if(schedule.day.toString()==='Saturday' ) {%>
     <% if( schedule.meal.toString()==='Breakfast' ) {%>
@@ -160,9 +168,8 @@
       <% saturdayDinnerId = schedule._id%>
       <% saturdayDinner = schedule.recipe.title %>
     <% } %>
-  <% } %> 
-<% }); %>
-
+    <% } %> 
+    <% }); %>
 
 
 
@@ -333,7 +340,7 @@
             <% } %>
           </div>
           <div class="meal">
-            <% if(sundayDinner !== undefined) { %>
+            <% if(saturdayDinner !== undefined) { %>
               <form action="/calendar/<%= saturdayDinnerId %>?_method=DELETE" method="POST">
                 <button type="submit"><%= saturdayDinner %></button>
               </form>
@@ -343,7 +350,6 @@
       </div>
       <p>To remove a recipe from the calendar, just click on it.</p>
       <form action="/calendar" method="POST">
-        <button>Clear calendar</button>
     </form>
     </div>
   </main>

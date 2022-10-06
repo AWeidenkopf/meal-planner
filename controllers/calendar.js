@@ -6,9 +6,10 @@ function index(req, res) {
   Calendar.find({})
   .populate('recipe')
   .then(schedules => {
+    console.log(schedules)
     res.render('calendar/index', {
     title: 'Calendar',
-    schedules
+    schedules,
   })
 })
 }
