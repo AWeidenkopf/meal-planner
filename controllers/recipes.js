@@ -2,8 +2,7 @@ import { Recipe } from '../models/recipe.js'
 import { Profile } from '../models/profile.js'
 import { Ingredient } from '../models/ingredient.js'
 import { Calendar } from '../models/calendar.js'
-import multer from "multer"
-import { Image } from '../models/image.js'
+
 
 function index(req, res) {
   Recipe.find({})
@@ -33,45 +32,42 @@ function newRecipe(req, res) {
   })
 }
 
-let imagePath
+// let imagePath
 
-function handleUpload(req, res, next) {
+// function handleUpload(req, res, next) {
 
-  let storage = multer.diskStorage({
-    destination: function(req, file, cb){
-      cb(null, './public/assets/images')
-    },
-    filename: function(req, file, cb) {
-      cb(null,  Date.now() + file.originalname)
-    }
-  })
-  let upload = multer({storage: storage}).single('image')
+//   let storage = multer.diskStorage({
+//     destination: function(req, file, cb){
+//       cb(null, './public/assets/images')
+//     },
+//     filename: function(req, file, cb) {
+//       cb(null,  Date.now() + file.originalname)
+//     }
+//   })
+//   let upload = multer({storage: storage}).single('image')
   
-  upload(req, res, function(err){
-    if(err){
-      console.log(err)
-      return res.end('Error Uploading file')
-    } else{
-      console.log(req.file.filename)
+//   upload(req, res, function(err){
+//     if(err){
+//       console.log(err)
+//       return res.end('Error Uploading file')
+//     } else{
+//       console.log(req.file.filename)
       
-      req.flash('sucess', req.file.filename)
-      imagePath = req.file.filename
+//       req.flash('sucess', req.file.filename)
+//       imagePath = req.file.filename
 
-      Image.create({path: imagePath})
-      return imagePath, next()
-    }
-  })
+//       insertFile()
+//       Image.create({path: imagePath})
+//       return imagePath, next()
 
-
-}
+//     }
+//   })
+// }
 
 function create(req, res) {
   req.body.author = req.user.profile._id
-  for (let key in req.body) {
-    if (req.body[key] === '') delete req.body[key]
-  }
   console.log(req.body)
-  Recipe.create({ title: req.body.title, author: req.body.author, instructions: req.body.instructions, notes: req.body.notes, image: imagePath })
+  Recipe.create({ title: req.body.title, author: req.body.author, instructions: req.body.instructions, notes: req.body.notes, image: req.body.image})
     .then(recipe => {
       recipe.save()
       req.body.ingredients = req.body.ingredients.split(', ')
@@ -211,5 +207,4 @@ export {
   deleteRecipe as delete,
   addToList,
   deleteIngredient,
-  handleUpload
 }

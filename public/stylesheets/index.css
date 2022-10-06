@@ -35,7 +35,6 @@ body> h1 {
 
 .card-link {
 color: black;
-
 }
 
 .card-link:hover {
@@ -67,4 +66,16 @@ color: black;
   font-weight: bold;
   color: #faf9f4;
   font-size: 26px;
+}
+
+.card{
+  width: 100%;
+}
+
+.card>img{
+  max-width: 100%;
+  object-fit: contain;
+}
+.card-img-top{
+  margin-bottom: 10px;
 }

@@ -1,35 +1,43 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/new.css" />
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/new.css" />
+  <%- include('../partials/nav') %>
 
-<main>
-<div class="new-recipe-card">
-  <div class="card-head">
-    <h1>New Recipe Card</h1>
-  </div>
-  <div class="card-body">
-    <form action="/recipes" enctype="multipart/form-data" method="post">
-      <label class="title-label"> TITLE:
-        <input type="text" name="title"  class="form-control" placeholder="Vegetarian Chili" required>
-          <input type="file" name="image" accept="images/*" required>
-</label>
-<label class="title-label"> INSTRUCTIONS:
-  <textarea type="text-area" name="instructions"  class="form-control" cols="5" rows="20" placeholder="Sautée onions ... " required></textarea>
-</label>
-<label class="title-label"> NOTES:
-  <textarea type="text-area" name="notes" class="form-control" rows="10" placeholder="Instead of 1 tsp of salt, use only half tsp."></textarea>
-</label>
-<label class="title-label" for="ingredients-input"> INGREDIENTS: </label>
-  <p class="left">Add ingredients separated by comma. E.g. </p>
-  <span class="left">1 medium yellow onion, 1 tbsp olive oil</span>
-  <input type="text" class="form-control" name="ingredients" id="ingredients-input" required>
+    <main>
+      <div class="new-recipe-card">
+        <div class="card-head">
+          <h1>New Recipe Card</h1>
+        </div>
+        <div class="card-body">
+          <form action="/recipes" method="post">
+            <label class="title-label"> TITLE:
+              <input type="text" name="title" class="form-control" placeholder="Vegetarian Chili" required>
+            </label>
+            <label class="title-label">IMAGE URL:
+              <input type="text" name="image" class="form-control"
+                placeholder="https://www.wellplated.com/wp-content/uploads/2018/10/Best-Veggie-Chili-Instant-Pot-600x839.jpg"
+                autocomplete="off" required>
+            </label>
 
-  <button class="btn btn-outline-secondary" type="submit" name="name">ADD RECIPE</button>
-</form>
-</div>
-</div>
-</div>
-</main>
+            <!-- <input type="file" name="image" accept="images/*" required> -->
+            <label class="title-label"> INSTRUCTIONS:
+              <textarea type="text-area" name="instructions" class="form-control" cols="5" rows="20"
+                placeholder="Sautée onions ... " required></textarea>
+            </label>
+            <label class="title-label"> NOTES:
+              <textarea type="text-area" name="notes" class="form-control" rows="10"
+                placeholder="Instead of 1 tsp of salt, use only half tsp."></textarea>
+            </label>
+            <label class="title-label" for="ingredients-input"> INGREDIENTS: </label>
+            <p class="left">Add ingredients separated by comma. E.g. </p>
+            <span class="left">1 medium yellow onion, 1 tbsp olive oil</span>
+            <textarea type="text" class="form-control" name="ingredients" id="ingredients-input" required></textarea>
+
+            <button class="btn btn-outline-secondary" type="submit">ADD RECIPE</button>
+          </form>
+        </div>
+      </div>
+      </div>
+    </main>
 
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

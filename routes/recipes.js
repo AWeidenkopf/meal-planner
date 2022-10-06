@@ -12,7 +12,7 @@ router.get('/:id', middlewareCtrl.isLoggedIn, recipesCtrl.show)
 
 router.get('/:id/edit', middlewareCtrl.isLoggedIn, recipesCtrl.edit)
 
-router.post('/', middlewareCtrl.isLoggedIn, recipesCtrl.handleUpload, recipesCtrl.create)
+router.post('/', middlewareCtrl.isLoggedIn, recipesCtrl.create)
 
 router.post('/:id/ingredients', middlewareCtrl.isLoggedIn, recipesCtrl.addToList)
 
