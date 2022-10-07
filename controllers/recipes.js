@@ -32,10 +32,10 @@ function newRecipe(req, res) {
   })
 }
 
+// Hey guys, I'm working on the code below!
 // let imagePath
 
 // function handleUpload(req, res, next) {
-
 //   let storage = multer.diskStorage({
 //     destination: function(req, file, cb){
 //       cb(null, './public/assets/images')
@@ -45,28 +45,23 @@ function newRecipe(req, res) {
 //     }
 //   })
 //   let upload = multer({storage: storage}).single('image')
-  
 //   upload(req, res, function(err){
 //     if(err){
 //       console.log(err)
 //       return res.end('Error Uploading file')
 //     } else{
 //       console.log(req.file.filename)
-      
 //       req.flash('sucess', req.file.filename)
 //       imagePath = req.file.filename
-
 //       Image.create({path: imagePath})
 //       return imagePath, next()
-
 //     }
 //   })
 // }
 
 function create(req, res) {
   req.body.author = req.user.profile._id
-  console.log(req.body)
-  Recipe.create({ title: req.body.title, author: req.body.author, instructions: req.body.instructions, notes: req.body.notes, image: req.body.image})
+  Recipe.create({ title: req.body.title, author: req.body.author, instructions: req.body.instructions, notes: req.body.notes, image: req.body.image })
     .then(recipe => {
       recipe.save()
       req.body.ingredients = req.body.ingredients.split(', ')
@@ -128,7 +123,6 @@ function edit(req, res) {
   Recipe.findById(req.params.id)
     .populate('ingredients')
     .then(recipe => {
-      // Ingredient.find({_id: {$nin: recipe.ingredients}})
       Ingredient.find({ id: { $nin: recipe.ingredients } })
         .then(ingredients => {
           res.render('recipes/edit', {

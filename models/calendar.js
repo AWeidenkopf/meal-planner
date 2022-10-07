@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const calendarSchema = new Schema({
-  day: { 
+  day: {
     type: String,
     enum: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   },
@@ -12,10 +12,10 @@ const calendarSchema = new Schema({
     enum: ['Breakfast', 'Lunch', 'Dinner']
   },
   owner: {
-    type: Schema.Types.ObjectId, 
+    type: Schema.Types.ObjectId,
     ref: 'Profile'
   },
-  recipe: {type: Schema.Types.ObjectId, ref: "Recipe"},
+  recipe: { type: Schema.Types.ObjectId, ref: "Recipe" },
 }, {
   timestamps: true,
 })

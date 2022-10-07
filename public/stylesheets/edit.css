@@ -16,12 +16,14 @@ main {
 
 .container {
   width: 55vw;
+  min-width: 400px;
   max-width: 100%;
   background-color: #faf9f4;
   padding: 30px;
   margin: 20vh auto;
   box-shadow: 0 0 5px rgba(75, 75, 75, 0.6);
 }
+
 .content {
   width: 100%;
 }
@@ -30,9 +32,9 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5em;
-} */
+}
 
-#title-box {
+*/ #title-box {
   width: 100%;
   margin: 10px auto;
 }
@@ -54,9 +56,10 @@ ul>li {
   font-weight: bold;
 }
 
-.btn-outline-secondary{
+.btn-outline-secondary {
   --bs-btn-hover-bg: #50603f;
 }
+
 
 .ingredient-title,
 .title-label,
@@ -83,7 +86,7 @@ ul>li {
   width: 80%;
 }
 
-#button-addon2{
+#button-addon2 {
   margin-top: -3px;
 }
 

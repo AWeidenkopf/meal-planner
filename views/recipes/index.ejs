@@ -1,28 +1,29 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/index.css" />
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/index.css" />
+  <%- include('../partials/nav') %>
 
-<% if (user) { %>
-  <div class="new-recipe-btn">
-<a href="/recipes/new"><button class="btn btn-outline-secondary"> + Add a new recipe</button></a>
-</div>
-<h1>All Recipes</h1>
-
-  <section class="recipe-card">
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-    <% recipes.forEach(recipe => { %>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <img src="<%= recipe.image %>" class="card-img-top" alt="...">
-              <h5 class="card-title"><%= recipe.title%></h5>
-              <a href="/recipes/<%= recipe._id %>" class="card-link">View Recipe</a>
-            </div>
-          </div>
-        </div>
-        <% }) %> 
+    <% if (user) { %>
+      <div class="new-recipe-btn">
+        <a href="/recipes/new"><button class="btn btn-outline-secondary"> + Add a new recipe</button></a>
       </div>
-  </section>
-<% } %>
+      <h1>All Recipes</h1>
+      <section class="recipe-card">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <% recipes.forEach(recipe=> { %>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <img src="<%= recipe.image %>" class="card-img-top" alt="...">
+                  <h5 class="card-title">
+                    <%= recipe.title%>
+                  </h5>
+                  <a href="/recipes/<%= recipe._id %>" class="card-link">View Recipe</a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+      </section>
+      <% } %>
 
-<%- include('../partials/footer') %>
+        <%- include('../partials/footer') %>

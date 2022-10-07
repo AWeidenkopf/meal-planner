@@ -19,7 +19,7 @@ import { passDataToView } from './middleware/middleware.js'
 import './config/database.js'
 
 // load passport
-import'./config/passport.js'
+import './config/passport.js'
 
 // import routes
 import { router as indexRouter, router } from './routes/index.js'
@@ -72,7 +72,7 @@ app.use('/assets/images', express.static('assets/images'))
 
 app.use(session({
   secret: 'imagesupload',
-  cookie: {maxAge: 60000},
+  cookie: { maxAge: 60000 },
   saveUninitialized: false,
   resave: false
 }))

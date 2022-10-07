@@ -1,44 +1,43 @@
 <%- include('./partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/style.css" />
-<%- include('./partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <%- include('./partials/nav') %>
 
-<main>
-  <div id="landing-page-img">
-  </div>
-  <h2> How it works</h2>
-  <div id="how-it-works-box">
-    <div class="img-div">
-      <img src="https://i.ibb.co/hy1LThm/recipe-book.png" alt="recipe-book" width="250px">
-      <p>Create a shared recipe book by adding your favorite recipes.</p>
-    </div>
-    <div class="img-div">
-      <img src="https://i.ibb.co/W3g4kbM/phone.png" alt="phone" width="250px">
-      <p>Plan your meals by adding recipes to your calendar.</p>
-    </div>
-    <!-- <div>
+    <main>
+      <div id="landing-page-img">
+      </div>
+      <h2> How it works</h2>
+      <div id="how-it-works-box">
+        <div class="img-div">
+          <img src="https://i.ibb.co/hy1LThm/recipe-book.png" alt="recipe-book" width="250px">
+          <p>Create a shared recipe book by adding your favorite recipes.</p>
+        </div>
+        <div class="img-div">
+          <img src="https://i.ibb.co/W3g4kbM/phone.png" alt="phone" width="250px">
+          <p>Plan your meals by adding recipes to your calendar.</p>
+        </div>
+        <!-- Will add this code when create the grocery list Model -->
+        <!-- <div>
       <img src="https://i.ibb.co/xSnyJTP/grocery-list.png" alt="grocery-list" width="250px">
       <p>Select the ingredients needed for the recipe and add them to your grocery list.</p>
     </div> -->
-    <div class="img-div">
-      <img src="https://i.ibb.co/q0qt4dw/grocery-shop.png" alt="grocery-shop" width="250px">
-      <p>Grocery shop!</p>
-    </div>
-    <div class="img-div">
-      <img src="https://i.ibb.co/373nDdj/cook.png" alt="cook" width="250px">
-      <p>Cook your delicious meal!</p>
-    </div>
-  </div>
-  <% if (user?.profile.avatar) { %>
-    <h5>You are logged in as <%= user.profile.name %></h5>
-    <img class="avatar"
-      src="<%= user.profile.avatar %>"
-      alt="<%= user.profile.name %> avatar"
-    />
-  </div>
-<% } else { %>
-  <h3>Just login to start!</h3>
-  <% } %>
-  <div >
-</main>
+        <div class="img-div">
+          <img src="https://i.ibb.co/q0qt4dw/grocery-shop.png" alt="grocery-shop" width="250px">
+          <p>Grocery shop!</p>
+        </div>
+        <div class="img-div">
+          <img src="https://i.ibb.co/373nDdj/cook.png" alt="cook" width="250px">
+          <p>Cook your delicious meal!</p>
+        </div>
+      </div>
+      <% if (user?.profile.avatar) { %>
+        <h5>You are logged in as <%= user.profile.name %>
+        </h5>
+        <img class="avatar" src="<%= user.profile.avatar %>" alt="<%= user.profile.name %> avatar" />
+        </div>
+        <% } else { %>
+          <h3>Just login to start!</h3>
+          <% } %>
+            <div>
+    </main>
 
-<%- include('./partials/footer') %>
+    <%- include('./partials/footer') %>

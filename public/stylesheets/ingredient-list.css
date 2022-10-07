@@ -2,31 +2,72 @@ body {
   background-color: #faf9f4;
 }
 
-input {
-  background-color: #faf9f4;
-  border: 1px solid ;
-  border-radius: 10px;
-  width: 600px;
+.form-control {
+  display: inline-block;
+  width: 80%;
+}
+
+.btn-outline-secondary {
+  --bs-btn-hover-bg: #50603f;
+}
+
+.top {
+  margin-bottom: 50px;
+}
+
+h2 {
+  width: 100%;
+  display: inline;
+  color: #50603f;
+}
+
+.new-ingredient-form {
+  width: 100%;
+  margin: 0 40px;
+  margin-bottom: 20px;
 }
 
 #ingredients-box {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  max-height: 60rem;
+  width: 20rem;
+  padding: 5px;
+  gap: 7px;
   margin-top: 20px;
+  text-align: left;
 }
 
-button {
-  margin: 10px auto;
-  display: inline-block;
-  width: 180px;
+.delete-btn {
+  background-color: transparent;
+  border: 0;
   color: #50603f;
-  background-color: rgb(204, 213, 174);
-  border: 1px solid rgb(204, 213, 174);
-  border-radius: 10px;
+  font-weight: bold;
+}
+
+.btn {
+  margin-top: -4px;
+}
+
+.item {
+  width: 300px;
+  border-right: 1px solid #50603f;
 }
 
 #footer {
-  bottom: 0;
-  position: absolute;
+  margin-top: 30px;
+  bottom: 0px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#footer>p {
+  margin-top: 20px;
+  bottom: 0px;
 }

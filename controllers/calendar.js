@@ -4,27 +4,27 @@ import { Recipe } from '../models/recipe.js'
 
 function index(req, res) {
   Calendar.find({})
-  .populate('recipe')
-  .then(schedules => {
-    console.log(schedules)
-    res.render('calendar/index', {
-    title: 'Calendar',
-    schedules,
-  })
-})
+    .populate('recipe')
+    .then(schedules => {
+      console.log(schedules)
+      res.render('calendar/index', {
+        title: 'Calendar',
+        schedules,
+      })
+    })
 }
 
-function create(req, res){
-  let filter = {day: req.body.day, meal: req.body.meal, owner: req.body.owner}
+function create(req, res) {
+  let filter = { day: req.body.day, meal: req.body.meal, owner: req.body.owner }
   req.body.owner = req.user.profile._id
   Calendar.findOneAndUpdate(filter, req.body, {
     new: true,
     upsert: true
   })
-  .then(day => {
-    day.save()
-    res.redirect('/calendar')
-  })
+    .then(day => {
+      day.save()
+      res.redirect('/calendar')
+    })
 }
 
 function deleteSchedule(req, res) {

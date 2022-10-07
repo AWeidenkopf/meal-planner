@@ -1,26 +1,26 @@
-
 button {
   width: 200px;
   margin-top: 52px;
   margin-left: 50px;
 }
 
-.btn-outline-secondary{
+.btn-outline-secondary {
   --bs-btn-hover-bg: #50603f;
 }
 
 .new-recipe-btn {
   display: flex;
-  justify-content:left; 
+  justify-content: left;
   margin-left: 35px;
 }
 
-body> h1 {
+body>h1 {
   display: flex;
   justify-content: center;
   margin: 20px;
   margin-bottom: 50px;
 }
+
 .recipe-card {
   justify-content: center;
   text-align: center;
@@ -34,7 +34,7 @@ body> h1 {
 }
 
 .card-link {
-color: black;
+  color: black;
 }
 
 .card-link:hover {
@@ -50,6 +50,7 @@ color: black;
   margin-top: 30px;
   bottom: 0px;
 }
+
 .footer {
   display: flex;
   justify-content: center;
@@ -57,7 +58,7 @@ color: black;
   text-align: center;
 }
 
-#footer> p {
+#footer>p {
   margin-top: 20px;
   bottom: 0px;
 }
@@ -68,11 +69,11 @@ color: black;
   font-size: 26px;
 }
 
-.card{
+.card {
   width: 100%;
 }
 
-.card-img-top{
+.card-img-top {
   max-width: 260px;
   height: 260px;
   object-fit: cover;

@@ -6,12 +6,12 @@ const recipeSchema = new Schema({
   title: {
     type: String,
   },
-  author: { 
-    type: Schema.Types.ObjectId, 
+  author: {
+    type: Schema.Types.ObjectId,
     ref: 'Profile',
   },
-  ingredients: [{type: Schema.Types.ObjectId, ref: "Ingredient"}],
-  instructions: { 
+  ingredients: [{ type: Schema.Types.ObjectId, ref: "Ingredient" }],
+  instructions: {
     type: String,
   },
   notes: {

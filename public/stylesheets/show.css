@@ -1,10 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-main{
+main {
   line-height: 1.5;
   background-color: #50603f;
   width: 100%;
@@ -33,27 +33,23 @@ main{
 .content,
 img {
   flex: 1 1 500px;
-  /* width: 50%;
-  min-height: 1000px; */
-  /* float: left; */
-  /* border: 1px solid black; */
   padding: 0 30px;
 }
 
-.content{
+.content {
   width: 100%;
   float: left;
 }
 
-.image-div{
+.image-div {
   justify-content: center;
-  width:50%
+  width: 50%
 }
 
 img {
-  margin-top: 80px;
-  min-width: 750px;
-  height: 800px;
+  margin-top: 140px;
+  min-width: 600px;
+  max-height: 800px;
   object-fit: cover;
 }
 
@@ -62,7 +58,7 @@ img {
   display: inline;
 }
 
-.span-line{
+.span-line {
   height: fit-content;
   text-decoration: none;
   color: #50603f;
@@ -75,15 +71,15 @@ img {
   color: #50603f;
 }
 
-.span-line:hover{
+.span-line:hover {
   text-decoration: underline;
 }
 
-.notes-title{
+.notes-title {
   width: 100%
 }
 
-.notes-div{
+.notes-div {
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -104,7 +100,7 @@ li::before {
 
 ul>li {
   color: black;
-} 
+}
 
 .name {
   font-size: 15px;
@@ -114,6 +110,7 @@ ul>li {
   margin-right: 20px;
   margin-top: -30px;
 }
+
 .recipe-title {
   display: flex;
   text-align: left;
@@ -129,7 +126,7 @@ ul>li {
   color: #50603f;
 }
 
-.instructions-title, 
+.instructions-title,
 .notes-title {
   width: 100%;
   display: inline;
@@ -137,14 +134,6 @@ ul>li {
   margin: 15px auto;
   color: #50603f;
 }
-/* 
-
-
-.instructions-div{
-  min-height: 400px;
-} */
-
-
 
 a:hover {
   color: #50603f;

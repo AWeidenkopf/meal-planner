@@ -7,7 +7,7 @@ router.get('/new', ingredientsCtrl.new)
 
 router.post('/', ingredientsCtrl.create)
 
-// router.delete('/ingredients/:id', ingredientsCtrl.deleteIngredient)
+router.delete('/:id', ingredientsCtrl.delete)
 
 export {
   router
