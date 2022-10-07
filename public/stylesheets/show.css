@@ -49,6 +49,7 @@ img {
 img {
   margin-top: 140px;
   min-width: 600px;
+  max-width: 750px;
   max-height: 800px;
   object-fit: cover;
 }
