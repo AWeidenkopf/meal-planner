@@ -6,7 +6,7 @@ If you, like me, enjoy cooking and baking, you probably have your favorite recip
 
 ## Getting Started
 
-Here's the link where you can try it out: [Meal Planner/Recipe Book] (https://meal-planner-ana-weidenkopf.fly.dev/)
+Here's the link where you can try it out: [Meal Planner/Recipe Book](https://meal-planner-ana-weidenkopf.fly.dev/)
 
 ## Planning materials
 
