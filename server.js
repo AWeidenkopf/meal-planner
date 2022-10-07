@@ -11,7 +11,6 @@ import passport from 'passport'
 import multer from 'multer'
 import flash from 'connect-flash'
 
-
 // import custom middleware
 import { passDataToView } from './middleware/middleware.js'
 

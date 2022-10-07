@@ -38,7 +38,6 @@ function deleteIngredient(req, res) {
     })
 }
 
-
 export {
   newIngredient as new,
   create,
