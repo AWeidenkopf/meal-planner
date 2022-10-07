@@ -56,7 +56,6 @@ function newRecipe(req, res) {
 //       req.flash('sucess', req.file.filename)
 //       imagePath = req.file.filename
 
-//       insertFile()
 //       Image.create({path: imagePath})
 //       return imagePath, next()
 

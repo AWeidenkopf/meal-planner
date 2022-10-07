@@ -72,10 +72,9 @@ color: black;
   width: 100%;
 }
 
-.card>img{
-  max-width: 100%;
-  object-fit: contain;
-}
 .card-img-top{
-  margin-bottom: 10px;
+  max-width: 260px;
+  height: 260px;
+  object-fit: cover;
+  margin-bottom: 30px;
 }

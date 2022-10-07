@@ -15,7 +15,7 @@ main{
 }
 
 .container {
-  width: 55vw;
+  width: 80vw;
   max-width: 100%;
   min-height: 1000px;
   background-color: #faf9f4;
@@ -30,55 +30,63 @@ main{
   gap: 1.5em;
 }
 
-.content {
-  width: 100%;
-  min-height: 1000px;
-  border: 1px solid black;
-  padding: 20px 30px;
+.content,
+img {
+  flex: 1 1 500px;
+  /* width: 50%;
+  min-height: 1000px; */
+  /* float: left; */
+  /* border: 1px solid black; */
+  padding: 0 30px;
 }
 
-.content>span {
+.content{
+  width: 100%;
   float: left;
 }
 
+.image-div{
+  justify-content: center;
+  width:50%
+}
+
+img {
+  margin-top: 80px;
+  min-width: 750px;
+  height: 800px;
+  object-fit: cover;
+}
+
+.top {
+  width: 100%;
+  display: inline;
+}
+
 .span-line{
+  height: fit-content;
   text-decoration: none;
   color: #50603f;
   font-size: 18px;
   float: right;
 }
 
+.top>span {
+  float: left;
+  color: #50603f;
+}
+
 .span-line:hover{
   text-decoration: underline;
 }
 
-/* .img {
-  width: 250px;
-  float: right;
-  margin-top: 100px;
-} */
-
-.name {
-  font-size: 15px;
-  color: rgb(204, 213, 174);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.notes-title{
+  width: 100%
 }
 
-.recipe-title {
-  display: flex;
-  text-align: center;
-  align-items: center;
+.notes-div{
+  width: 100%;
   justify-content: center;
-  font-size: 45px;
-  margin: 30px auto;
-
-}
-
-.ingredient-title {
-  font-size: 20px;
-  margin: 20px auto;
-  color: #50603f;
+  align-items: center;
 }
 
 ul>li {
@@ -90,24 +98,52 @@ li::before {
   content: "\2022";
   color: #50603f;
   display: inline-block;
-  font-size: 24px;
+  font-size: 18px;
   width: 1em;
 }
 
 ul>li {
   color: black;
+} 
+
+.name {
+  font-size: 15px;
+  color: rgb(204, 213, 174);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 20px;
+  margin-top: -30px;
+}
+.recipe-title {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 30px auto;
+}
+
+.ingredient-title {
+  font-size: 20px;
+  margin: 18px auto;
+  color: #50603f;
 }
 
 .instructions-title, 
 .notes-title {
+  width: 100%;
+  display: inline;
   font-size: 20px;
   margin: 15px auto;
   color: #50603f;
 }
+/* 
+
 
 .instructions-div{
   min-height: 400px;
-}
+} */
+
 
 
 a:hover {

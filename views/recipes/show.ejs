@@ -5,56 +5,59 @@
   <div class="container">
     <div class="wrap">
       <div class="content">
+        <div class="top">
         <span class="name">
           <%= recipe.author.name %>
         </span>
-        <% if (recipe.author.equals(user?.profile._id)) { %>
-          <a href="/recipes/<%= recipe._id %>/edit" class="span-line"> ✏️ EDIT RECIPE </a>
-          <% } %>
-            <!-- <div class="img">
-        <img src="https://i.ibb.co/jGCTfFJ/Instant-Pot-Vegetarian-Chili-Canned-Beans-600x747.jpg" width="400px">
-      </div> -->
-
-            <h2 class="recipe-title">
-              <%= recipe.title %>
-            </h2>
-            <div class="ingredient-title">
-              INGREDIENTS
-            </div>
-            <ul>
-              <% recipe.ingredients.forEach(ingredient=> { %>
-                <li>
-                  <%= ingredient.name %>
+        <!-- <div class="img">
+          <img src="https://i.ibb.co/jGCTfFJ/Instant-Pot-Vegetarian-Chili-Canned-Beans-600x747.jpg" width="400px">
+        </div> -->
+        
+        <h2 class="recipe-title">
+          <%= recipe.title %>
+        </h2>
+      </div>
+        <div class="ingredient-title">
+          INGREDIENTS
+        </div>
+        <ul>
+          <% recipe.ingredients.forEach(ingredient=> { %>
+            <li>
+              <%= ingredient.name %>
                 </li>
                 <% }) %>
-            </ul>
-
-            <div class="instructions-title">
-              INSTRUCTIONS
+              </ul>
+              
+              <div class="instructions-title">
+                INSTRUCTIONS
+              </div>
+              <div class="instructions-div">
+                <%= recipe.instructions %>
+              </div>
             </div>
-            <div class="instructions-div">
-              <%= recipe.instructions %>
+            
+            <div class="image-div">
+              <% if (recipe.author.equals(user?.profile._id)) { %>
+                <a href="/recipes/<%= recipe._id %>/edit" class="span-line"> ✏️ EDIT RECIPE </a>
+                <% } %>
+                <img class="image" src="<%=recipe.image%>">
+              </div>
+              <div class="notes-title">
+                NOTES
+              </div>
+              <div class="notes-div">
+      
+                <%= recipe.notes %>
+                
+              </div>
+              
             </div>
-
-            <div class="notes-title">
-              NOTES
-            </div>
-            <div>
-
-              <%= recipe.notes %>
-
-            </div>
-
-          </div>
-          </form>
-
-        </div>
-        <form action="/calendar" method="POST">
+            <form action="/calendar" method="POST">
               <div class="input-group">
-              <select name="day" aria-label="First name" class="form-control" required>
-                <option class="dropdown-item" value="Sunday">Sunday</option>
-                <option class="dropdown-item" value="Monday">Monday</option>
-                <option class="dropdown-item" value="Tuesday">Tuesday</option>
+                <select name="day" aria-label="First name" class="form-control" required>
+              <option class="dropdown-item" value="Sunday">Sunday</option>
+              <option class="dropdown-item" value="Monday">Monday</option>
+              <option class="dropdown-item" value="Tuesday">Tuesday</option>
                 <option class="dropdown-item" value="Wednesday">Wednesday</option>
                 <option class="dropdown-item" value="Thursday">Thursday</option>
                 <option class="dropdown-item" value="Friday">Friday</option>
